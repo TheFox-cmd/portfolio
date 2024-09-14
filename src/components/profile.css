@@ -1,0 +1,19 @@
+.profile-container {
+  @apply flex bg-zinc-900 w-full h-screen
+}
+
+.information, .work {
+  @apply flex flex-1 w-1/2 flex-col items-center justify-center h-full;
+}
+
+.connections {
+  @apply bg-white
+}
+
+.header {
+  @apply text-slate-200
+}
+
+.text {
+  @apply text-slate-400
+}
