@@ -1,42 +1,47 @@
 import "./profile.css";
-import InstagramIcon from '@mui/icons-material/Instagram';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import Projects from "./projects";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const Profile = () => {
   return (
     <div className="profile-container">
-      <div className="information">
-        <div className="icon">&lt;/&gt;</div>
-        <div className="name header">Ryuki Koda</div>
-        <div className="connections">
-          <a
-            href="https://www.instagram.com/a.random.fox/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <InstagramIcon />
-          </a>
-          <a
-            href="https://github.com/TheFox-cmd"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GitHubIcon />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/ryuki-koda-9b3a2b1b3/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <LinkedInIcon />
-          </a>
+      <div className="information-container">
+        <div className="information-box">
+          <div className="name">Ryuki Koda</div>
+          <div className="connections">
+            <a
+              href="https://www.instagram.com/a.random.fox/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="icon"
+            >
+              <InstagramIcon />
+            </a>
+            <a
+              href="https://github.com/TheFox-cmd"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="icon"
+            >
+              <GitHubIcon />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/ryuki-koda-9b3a2b1b3/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="icon"
+            >
+              <LinkedInIcon />
+            </a>
+          </div>
         </div>
       </div>
-      <div className="work">
+      <div className="work-container">
         <div className="about">
-          <div className="header">About</div>
-          <div className="text">
+          <div className="h-text">About</div>
+          <div className="p-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -46,30 +51,15 @@ const Profile = () => {
             culpa qui officia deserunt mollit anim id est laborum.
           </div>
         </div>
+        <br />
         <div className="projects">
-          <div className="header">Projects</div>
-          <div className="text">
-            <a
-              href="https://github.com/TheFox-cmd/GTFO_logTracker"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GTFO Log Tracker
-            </a>
-          </div>
-          <div className="text">
-            <a
-              href="https://github.com/TheFox-cmd/discord_mimCat"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Discord Bot MimCat
-            </a>
-          </div>
+          <div className="h-text">Projects</div>
+          <Projects />
         </div>
+        <div className="reserve"></div>
         <div className="contacts">
-          <div className="header">Contacts</div>
-          <div className="text">rkoda997@gmail.com</div>
+          <div className="h-text">Contacts</div>
+          <div className="p-text">rkoda997@gmail.com</div>
         </div>
       </div>
     </div>

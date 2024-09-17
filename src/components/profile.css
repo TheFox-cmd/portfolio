@@ -2,18 +2,46 @@
   @apply flex bg-zinc-900 w-full h-screen
 }
 
-.information, .work {
+.information-container {
   @apply flex flex-1 w-1/2 flex-col items-center justify-center h-full;
 }
 
+.work-container {
+  @apply flex flex-1 w-1/2 flex-col h-full p-20;
+}
+
+.name {
+  @apply text-4xl font-semibold border-slate-200 text-slate-200
+}
+
 .connections {
-  @apply bg-white
+  @apply flex justify-between items-center h-full;
 }
 
-.header {
-  @apply text-slate-200
+.icon {
+  @apply text-4xl text-slate-200
 }
 
-.text {
+.about {
+  @apply h-1/6
+}
+
+.projects {
+  @apply h-1/6
+}
+
+.reserve {
+  @apply h-3/6
+}
+
+.contacts {
+  @apply h-1/6
+}
+
+.h-text {
+  @apply text-slate-200 text-2xl font-semibold
+}
+
+.p-text {
   @apply text-slate-400
 }
