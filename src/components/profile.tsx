@@ -42,13 +42,21 @@ const Profile = () => {
         <div className="about">
           <div className="h-text">About</div>
           <div className="p-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            Hi, my name is Ryuki Koda, you can call me Nick, and I have been
+            working in full-stack development with over 4 years of experience. I
+            have worked with various industries, including advertisement,
+            software, and finance. My frontend work involves using HTML, CSS3,
+            JavaScript, and TypeScript, while my backend development utilizes
+            Node.js, Express, and MySQL. I am capable of creating responsive,
+            user-friendly interfaces with CSS preprocessors and utilizing
+            libraries such as TailwindCSS, and Material UI, and I extend these
+            capabilities to React frameworks with state management tools like
+            Redux Toolkit. I have a strong understanding of implementing RESTful
+            APIs, practicing TDD unit testing, and deploying applications on
+            cloud platforms like AWS. Additionally, I have experience with
+            GitHub for version control and various CI/CD tools to streamline
+            development processes. Lastly, having worked in Agile/Scrum teams, I
+            hope to continue to grow and improve within the team.
           </div>
         </div>
         <br />
