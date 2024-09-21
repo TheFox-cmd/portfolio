@@ -1,9 +1,23 @@
+body {
+  @apply overflow-hidden
+}
+
 .profile-container {
-  @apply flex bg-zinc-900 w-full h-screen
+  @apply flex w-full h-screen;
+  background: rgb(2,0,36);
+  background: linear-gradient(45deg, rgba(2,0,36,1) 32%, rgba(120,120,120,1) 97%, rgba(140,140,140,1) 100%);
 }
 
 .information-container {
   @apply flex flex-1 w-1/2 flex-col items-center justify-center h-full;
+}
+
+.information-box {
+  @apply flex flex-col items-center justify-center w-auto h-auto p-20;
+}
+
+.avatar {
+  @apply filter invert w-80 h-auto border-solid border-x-2 border-gray-700 rounded-3xl m-5;
 }
 
 .work-container {
@@ -23,7 +37,7 @@
 }
 
 .about {
-  @apply h-1/6
+  @apply h-2/6
 }
 
 .projects {
@@ -31,7 +45,7 @@
 }
 
 .reserve {
-  @apply h-3/6
+  @apply h-2/6
 }
 
 .contacts {
@@ -43,5 +57,5 @@
 }
 
 .p-text {
-  @apply text-slate-400
+  @apply text-slate-200
 }

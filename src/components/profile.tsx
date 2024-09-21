@@ -1,5 +1,6 @@
 import "./profile.css";
 import Projects from "./projects";
+import foxImage from "../assets/fox.jpg";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -9,6 +10,9 @@ const Profile = () => {
     <div className="profile-container">
       <div className="information-container">
         <div className="information-box">
+          <div className="avatar">
+            <img src={foxImage} alt="fox image icon" />
+          </div>
           <div className="name">Ryuki Koda</div>
           <div className="connections">
             <a
@@ -42,21 +46,16 @@ const Profile = () => {
         <div className="about">
           <div className="h-text">About</div>
           <div className="p-text">
-            Hi, my name is Ryuki Koda, you can call me Nick, and I have been
-            working in full-stack development with over 4 years of experience. I
-            have worked with various industries, including advertisement,
-            software, and finance. My frontend work involves using HTML, CSS3,
-            JavaScript, and TypeScript, while my backend development utilizes
-            Node.js, Express, and MySQL. I am capable of creating responsive,
-            user-friendly interfaces with CSS preprocessors and utilizing
-            libraries such as TailwindCSS, and Material UI, and I extend these
-            capabilities to React frameworks with state management tools like
-            Redux Toolkit. I have a strong understanding of implementing RESTful
-            APIs, practicing TDD unit testing, and deploying applications on
-            cloud platforms like AWS. Additionally, I have experience with
-            GitHub for version control and various CI/CD tools to streamline
-            development processes. Lastly, having worked in Agile/Scrum teams, I
-            hope to continue to grow and improve within the team.
+            Hey there! I’m Ryuki, a full-stack developer by day and a
+            storyteller by heart. I love crafting digital experiences that blend
+            code with creativity. Whether I’m building seamless interfaces or
+            diving deep into backend logic, I’m all about turning complex
+            problems into beautifully designed solutions. When I’m not coding,
+            you’ll find me behind a camera capturing the world’s aesthetic
+            moments, lost in a game with an epic storyline, or dreaming up new
+            game designs that blend my passion for tech, art, and storytelling.
+            For me, every line of code is a like a little bit of magic to create 
+            something new and exciting!
           </div>
         </div>
         <br />
