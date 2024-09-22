@@ -11,4 +11,4 @@ RUN npm run build
 # Expose the app
 EXPOSE 3000
 # Start the application
-CMD ["node", "App.js"]
+CMD ["node", "App.cjs"]
