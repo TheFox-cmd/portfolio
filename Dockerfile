@@ -5,12 +5,10 @@ WORKDIR /app
 # Copy package.json and pnpm-lock.yaml
 COPY . .
 # Install app dependencies using PNPM
-RUN npm install -g pnpm
-# Install dependencies
-RUN pnpm i 
+RUN npm install
 # Build the TypeScript code
-# RUN pnpm run build
+RUN npm run build
 # Expose the app
 EXPOSE 3000
 # Start the application
-CMD ["pnpm", "start"]
+CMD ["node", "App.js"]
