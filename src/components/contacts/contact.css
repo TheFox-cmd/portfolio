@@ -1,0 +1,22 @@
+.contacts-page {
+  @apply flex w-full h-screen;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    45deg,
+    rgba(2, 0, 36, 1) 32%,
+    rgba(120, 120, 120, 1) 97%,
+    rgba(140, 140, 140, 1) 100%
+  );
+}
+
+.contacts-container {
+  @apply flex flex-row w-7/12 h-3/5 mx-auto my-auto mb-20;
+}
+
+.contacts-message {
+  @apply flex w-2/3 h-auto bg-slate-300 text-slate-800;
+}
+
+.contacts-info {
+  @apply flex w-1/3 h-auto bg-blue-600 text-slate-300;
+}

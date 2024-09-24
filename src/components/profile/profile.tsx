@@ -1,6 +1,7 @@
 import "./profile.css";
+import { Link } from "react-router-dom";
 import Projects from "./projects";
-import foxImage from "../assets/fox.jpg";
+import foxImage from "../../assets/fox.jpg";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -66,8 +67,9 @@ const Profile = () => {
         </div>
         <div className="reserve"></div>
         <div className="contacts">
-          <button className="contact-button">Contacts</button>
-
+          <Link to="/contacts">
+            <button className="contact-button">Contacts</button>
+          </Link>
         </div>
       </div>
     </div>

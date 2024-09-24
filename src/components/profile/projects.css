@@ -8,17 +8,14 @@
   background-position: center; 
 }
 
-.project-content {
-}
-
 .project-gtfo {
   @apply text-slate-200;
-  background-image: url('../assets/gtfo_bg.jpg'); 
+  background-image: url('../../assets/gtfo_bg.jpg'); 
 }
 
 .project-discordbot {
   @apply text-gray-950;
-  background-image: url('../assets/discord_bg.jpg'); 
+  background-image: url('../../assets/discord_bg.jpg'); 
 }
 
 .project-link {

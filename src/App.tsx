@@ -1,12 +1,19 @@
 import './App.css'
-import Profile from './components/profile'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Profile from './components/profile/profile'
+import Contact from './components/contacts/contact'; 
+// import NotFound from './NotFound'; // Optional: Not found component
 
 function App() {
 
   return (
-    <>
-      <Profile />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Profile />} />
+        <Route path="/contacts" element={<Contact />} />
+        {/* <Route path="*" element={<NotFound />} />  */}
+      </Routes>
+    </Router>
   )
 }
 
