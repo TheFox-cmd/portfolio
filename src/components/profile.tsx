@@ -32,7 +32,7 @@ const Profile = () => {
               <GitHubIcon />
             </a>
             <a
-              href="https://www.linkedin.com/in/ryuki-koda-9b3a2b1b3/"
+              href="www.linkedin.com/in/ryuki-koda"
               target="_blank"
               rel="noopener noreferrer"
               className="icon"
@@ -45,6 +45,7 @@ const Profile = () => {
       <div className="work-container">
         <div className="about">
           <div className="h-text">About</div>
+          <br />
           <div className="p-text">
             Hey there! I’m Ryuki, a full-stack developer by day and a
             storyteller by heart. I love crafting digital experiences that blend
@@ -54,7 +55,7 @@ const Profile = () => {
             you’ll find me behind a camera capturing the world’s aesthetic
             moments, lost in a game with an epic storyline, or dreaming up new
             game designs that blend my passion for tech, art, and storytelling.
-            For me, every line of code is a like a little bit of magic to create 
+            For me, every line of code is a like a little bit of magic to create
             something new and exciting!
           </div>
         </div>
@@ -65,8 +66,8 @@ const Profile = () => {
         </div>
         <div className="reserve"></div>
         <div className="contacts">
-          <div className="h-text">Contacts</div>
-          <div className="p-text">rkoda997@gmail.com</div>
+          <button className="contact-button">Contacts</button>
+
         </div>
       </div>
     </div>
