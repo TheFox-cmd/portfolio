@@ -1,23 +1,39 @@
-import { useEffect, useState } from "react";
 import "./contact.css";
 import emailjs from "@emailjs/browser";
+import * as React from "react";
+import * as Yup from "yup";
+
+import { Formik, Form, useField, FieldHookConfig } from "formik";
+import { TextField } from "@mui/material";
+
+interface ClientInfo {
+  clientName: string;
+  clientProject: string;
+  clientEmail: string;
+}
+
+type MyTextFieldProps = {label: string} & FieldHookConfig<string>;
+
+const MyTextField: React.FC<MyTextFieldProps> = ({
+  label,
+  ...props
+}) => {
+  const [field, meta] = useField(props);
+  return (
+    <>
+      <TextField label={label} {...field} error={meta.touched && !!meta.error} helperText={meta.error}/>
+    </>
+  );
+};
 
 const Contact = () => {
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
-  const [mail, setMail] = useState("");
-  const [message, setMessage] = useState("");
-  const [readySend, setReadySend] = useState(false);
-
-  useEffect(() => {
-    if (!readySend) return;
-
-
+  const handleEmail = ({ clientName, clientProject, clientEmail } : ClientInfo) => {
+    const message = `Hello, my name is ${clientName} and I am looking for you to help me with ${clientProject}. You can reach me at ${clientEmail}`
 
     const mailTemplate = {
-      from_name: name,
+      from_name: clientName,
       message: message,
-      reply_to: mail,
+      reply_to: clientEmail,
     };
 
     emailjs
@@ -37,62 +53,66 @@ const Contact = () => {
           console.log("FAILED...", error);
         }
       );
-    
-    setReadySend(false);
-  }, [readySend]);
-
-  const handleEmail = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!name || !description || !mail) {
-      alert("Please fill in all fields");
-      return;
-    }
-
-    setMessage(
-      `Hello, my name is ${name} and I am looking for you to help me with ${description}. You can reach me at ${mail}`
-    );
-
-    setReadySend(true);
   };
 
   return (
     <>
       <div className="contacts-page">
         <div className="contacts-container">
-          <div className="contacts-message">
-            <form onSubmit={handleEmail}>
-              <div className="header">
-                <span className="header-text">Hello, my name is </span>
-                <input
-                  type="text"
-                  placeholder="your name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </div>
-              <div className="message">
-                <span className="message-text">
-                  and I am looking for you to help me with{" "}
-                </span>
-                <input
-                  type="text"
-                  placeholder="brief project description"
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                />
-              </div>
-              <div className="footer">
-                <span className="">You can reach me at </span>
-                <input
-                  type="text"
-                  placeholder="Your email address"
-                  value={mail}
-                  onChange={(e) => setMail(e.target.value)}
-                />
-              </div>
-              <button>Send</button>
-            </form>
+          <div className="contacts-form">
+            <Formik
+              initialValues={{
+                clientName: "",
+                clientProject: "",
+                clientEmail: "",
+              }}
+              validationSchema={Yup.object({
+                clientName: Yup.string()
+                  .required('Required'),
+                  clientProject: Yup.string()
+                  .required('Required'),
+                  clientEmail: Yup.string().email('Invalid email address').required('Required'),
+              })}
+              onSubmit={(values : ClientInfo, actions) => {
+                console.log({ values, actions });
+                actions.setSubmitting(false);
+                handleEmail(values);
+              }}
+            >
+              
+              {() => (
+                <Form>
+                  <div>
+                    <span className="header-text">Hello, my name is </span>
+                    <MyTextField
+                      name="clientName"
+                      type="text"
+                      label="your name"
+                    />
+                  </div>
+                  <div>
+                    <span className="message-text">
+                      and I am looking for you to help me with
+                    </span>
+                    <MyTextField
+                      name="clientProject"
+                      type="text"
+                      label="your project"
+                    />
+                  </div>
+                  <div>
+                    <span className="">You can reach me at </span>
+                    <MyTextField
+                      name="clientEmail"
+                      type="email"
+                      label="your email"
+                    />
+                  </div>
+
+                  <button type="submit">Submit</button>
+                </Form>
+              )}
+            </Formik>
           </div>
           <div className="contacts-info">
             <div className="info email">rkoda997@gmail.com</div>
