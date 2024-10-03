@@ -1,127 +1,121 @@
-import "./contact.css";
-import emailjs from "@emailjs/browser";
-import * as React from "react";
-import * as Yup from "yup";
-
-import { Formik, Form, useField, FieldHookConfig } from "formik";
-import { TextField } from "@mui/material";
-
-interface ClientInfo {
-  clientName: string;
-  clientProject: string;
-  clientEmail: string;
-}
-
-type MyTextFieldProps = {label: string} & FieldHookConfig<string>;
-
-const MyTextField: React.FC<MyTextFieldProps> = ({
-  label,
-  ...props
-}) => {
-  const [field, meta] = useField(props);
-  return (
-    <>
-      <TextField label={label} {...field} error={meta.touched && !!meta.error} helperText={meta.error}/>
-    </>
-  );
-};
+import { Box, Paper } from "@mui/material";
+import ContactForm from "./contactform";
+import Typography from "@mui/material/Typography";
+import { blue, orange, red } from "@mui/material/colors";
+import Grid from "@mui/material/Grid2";
 
 const Contact = () => {
-  const handleEmail = ({ clientName, clientProject, clientEmail } : ClientInfo) => {
-    const message = `Hello, my name is ${clientName} and I am looking for you to help me with ${clientProject}. You can reach me at ${clientEmail}`
-
-    const mailTemplate = {
-      from_name: clientName,
-      message: message,
-      reply_to: clientEmail,
-    };
-
-    emailjs
-      .send(
-        import.meta.env.VITE_EMAILJS_SERVICEID as string,
-        import.meta.env.VITE_EMAILJS_TEMPLATEID as string,
-        mailTemplate,
-        import.meta.env.VITE_EMAILJS_PUBLICKEY as string
-      )
-      .then(
-        (response) => {
-          alert("Email sent successfully");
-          console.log("SUCCESS!", response.status, response.text);
-        },
-        (error) => {
-          alert("Email failed to send");
-          console.log("FAILED...", error);
-        }
-      );
-  };
-
   return (
-    <>
-      <div className="contacts-page">
-        <div className="contacts-container">
-          <div className="contacts-form">
-            <Formik
-              initialValues={{
-                clientName: "",
-                clientProject: "",
-                clientEmail: "",
-              }}
-              validationSchema={Yup.object({
-                clientName: Yup.string()
-                  .required('Required'),
-                  clientProject: Yup.string()
-                  .required('Required'),
-                  clientEmail: Yup.string().email('Invalid email address').required('Required'),
-              })}
-              onSubmit={(values : ClientInfo, actions) => {
-                console.log({ values, actions });
-                actions.setSubmitting(false);
-                handleEmail(values);
-              }}
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      width="100vw"
+      height="100vh"
+      sx={{
+        background:
+          "linear-gradient(45deg, #0C0014 33%, #64b5f6 88%, #bbdefb 100%)",
+      }}
+    >
+      <Paper
+        elevation={8}
+        sx={{
+          margin: "200px 0 0 0",
+          padding: "0px",
+          width: "900px",
+          height: "450px",
+          borderRadius: "10px",
+          bgcolor: "#EAEAEA",
+        }}
+      >
+        <Grid
+          container
+          direction="column"
+          justifyContent="center"
+          alignItems="stretch"
+          width="100%"
+          height="100%"
+        >
+          <Grid size={8} padding={5} height="100%">
+            <ContactForm />
+          </Grid>
+          <Grid
+            container
+            bgcolor={blue[200]}
+            direction="column"
+            justifyContent="center"
+            alignItems="center"
+            width="320px"
+            height="100%"
+            sx={{
+              borderTopRightRadius: "10px",
+              borderBottomRightRadius: "10px",
+            }}
+          >
+            <Grid
+              position="relative"
+              right="55px"
+              lineHeight={3}
+              margin={3}
+              width={240}
+              height={48}
+              bgcolor="#0A2E5C"
+              color="#EDEDED"
+              borderRadius="5px"
             >
-              
-              {() => (
-                <Form>
-                  <div>
-                    <span className="header-text">Hello, my name is </span>
-                    <MyTextField
-                      name="clientName"
-                      type="text"
-                      label="your name"
-                    />
-                  </div>
-                  <div>
-                    <span className="message-text">
-                      and I am looking for you to help me with
-                    </span>
-                    <MyTextField
-                      name="clientProject"
-                      type="text"
-                      label="your project"
-                    />
-                  </div>
-                  <div>
-                    <span className="">You can reach me at </span>
-                    <MyTextField
-                      name="clientEmail"
-                      type="email"
-                      label="your email"
-                    />
-                  </div>
-
-                  <button type="submit">Submit</button>
-                </Form>
-              )}
-            </Formik>
-          </div>
-          <div className="contacts-info">
-            <div className="info email">rkoda997@gmail.com</div>
-            <div className="info phone">5106126878</div>
-            <div className="info discord">thefox_cmd</div>
-          </div>
-        </div>
-      </div>
-    </>
+              <Typography
+                variant="body1"
+                fontWeight="bold"
+                lineHeight="48px"
+                textAlign="center"
+              >
+                Email: rkoda@gmail.com
+              </Typography>
+            </Grid>
+            <Grid
+              position="relative"
+              right="55px"
+              lineHeight={3}
+              margin={3}
+              width={240}
+              height={48}
+              bgcolor="#0A2E5C"
+              color="#EDEDED"
+              borderRadius="5px"
+            >
+              <Typography
+                variant="body1"
+                fontWeight="bold"
+                lineHeight="48px"
+                textAlign="center"
+              >
+                Phone: 5106126878
+              </Typography>
+            </Grid>
+            <Grid
+              position="relative"
+              right="55px"
+              lineHeight={3}
+              margin={3}
+              width={240}
+              height={48}
+              bgcolor="#0A2E5C"
+              color="#EDEDED"
+              borderRadius="5px"
+            >
+              <Typography
+                variant="body1"
+                fontWeight="bold"
+                lineHeight="48px"
+                textAlign="center"
+              >
+                Discord: thefox_cmd
+              </Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Paper>
+    </Box>
   );
 };
 
