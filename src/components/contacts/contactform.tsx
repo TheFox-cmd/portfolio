@@ -2,12 +2,14 @@ import emailjs from "@emailjs/browser";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid2";
 import SendIcon from "@mui/icons-material/Send";
+import HomeIcon from '@mui/icons-material/Home';
 import * as React from "react";
 import * as Yup from "yup";
 
 import { Formik, Form, useField, FieldHookConfig } from "formik";
 import { TextField } from "@mui/material";
 import ClientSchema from "../schema/clientSchema";
+import { Link } from "react-router-dom";
 
 type ClientInfo = Yup.InferType<typeof ClientSchema>;
 
@@ -158,8 +160,22 @@ const ContactForm = () => {
                 />
               </Grid>
             </Grid>
-            <Grid container justifyContent="flex-end" margin="20px 30px 0 0">
-              <Button variant="contained" type="submit" endIcon={<SendIcon />} sx={{bgcolor:"#0A2E5C"}}>
+            <Grid container justifyContent="space-between" margin="30px 30px 0 0">
+              <Button
+                component={Link}
+                to="/"
+                variant="contained"
+                endIcon={<HomeIcon />} 
+                sx={{ bgcolor: "#0A2E5C" }}
+              >
+                Home
+              </Button>
+              <Button
+                variant="contained"
+                type="submit"
+                endIcon={<SendIcon />}
+                sx={{ bgcolor: "#0A2E5C" }}
+              >
                 Send
               </Button>
             </Grid>
