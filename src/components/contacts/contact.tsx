@@ -1,7 +1,7 @@
 import { Box, Paper } from "@mui/material";
 import ContactForm from "./contactform";
 import Typography from "@mui/material/Typography";
-import { blue, orange, red } from "@mui/material/colors";
+import { blue } from "@mui/material/colors";
 import Grid from "@mui/material/Grid2";
 
 const Contact = () => {

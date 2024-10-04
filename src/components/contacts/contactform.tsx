@@ -109,7 +109,7 @@ const ContactForm = () => {
                   name="clientName"
                   type="text"
                   label="your name"
-                  width="265px"
+                  width="300px"
                 />
               </Grid>
             </Grid>
@@ -129,7 +129,7 @@ const ContactForm = () => {
                   type="text"
                   label="brief project description"
                   multiline
-                  width="456px"
+                  width="490px"
                 />
               </Grid>
             </Grid>
@@ -154,12 +154,12 @@ const ContactForm = () => {
                   name="clientEmail"
                   type="text"
                   label="your email address"
-                  width="296px"
+                  width="330px"
                 />
               </Grid>
             </Grid>
-            <Grid container justifyContent="flex-end" marginTop="20px">
-              <Button variant="contained" type="submit" endIcon={<SendIcon />}>
+            <Grid container justifyContent="flex-end" margin="20px 30px 0 0">
+              <Button variant="contained" type="submit" endIcon={<SendIcon />} sx={{bgcolor:"#0A2E5C"}}>
                 Send
               </Button>
             </Grid>
