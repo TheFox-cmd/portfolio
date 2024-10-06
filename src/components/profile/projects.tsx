@@ -1,31 +1,101 @@
-import "./projects.css";
+import Grid from "@mui/material/Grid2";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import CardActionArea from "@mui/material/CardActionArea";
+import Typography from "@mui/material/Typography";
+import gtfoBg from "../../assets/gtfo_bg.jpg";
+import mimcatBg from "../../assets/discord_bg.jpg";
+import { Box } from "@mui/material";
 
 const Projects = () => {
   return (
-    <div className="project-container">
-      <div className="project-box project-gtfo">
-        <div className="project-content">
+    <Grid container spacing={2}>
+      <Grid size={4} color="white">
+        <Card
+          sx={{
+            maxWidth: 345,
+            bgcolor: "#DADADA",
+            borderRadius: "12px",
+            transition:
+              "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
+            "&:hover": {
+              transform: "scale(1.05)",
+              boxShadow: "0 4px 20px rgba(0, 0, 0, 0.2)",
+            },
+          }}
+        >
           <a
-            className="project-link"
             href="https://github.com/TheFox-cmd/GTFO_logTracker"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <div className="project-title">GTFO Log Tracker</div>
+            <CardActionArea>
+              <CardMedia
+                sx={{ height: 70 }}
+                image={gtfoBg}
+                title="GTFO Background"
+              />
+              <CardContent sx={{ height: 40, padding: "24px", lineHeight: 40 }}>
+                <Box
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
+                  height="100%"
+                  textAlign="center"
+                >
+                  <Typography variant="h6" component="div">
+                    GTFO Log Tracker
+                  </Typography>
+                </Box>
+              </CardContent>
+            </CardActionArea>
           </a>
-        </div>
-      </div>
-      <div className="project-box project-discordbot">
-        <a
-          className="project-link"
-          href="https://github.com/TheFox-cmd/discord_mimCat"
-          target="_blank"
-          rel="noopener noreferrer"
+        </Card>
+      </Grid>
+      <Grid size={4} color="white">
+        <Card
+          sx={{
+            maxWidth: 345,
+            bgcolor: "#DADADA",
+            borderRadius: "12px",
+            transition:
+              "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
+            "&:hover": {
+              transform: "scale(1.05)",
+              boxShadow: "0 4px 20px rgba(0, 0, 0, 0.2)",
+            },
+          }}
         >
-          <div className="project-title">Discord Bot mimCat</div>
-        </a>
-      </div>
-    </div>
+          <a
+            href="https://github.com/TheFox-cmd/GTFO_logTracker"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <CardActionArea>
+              <CardMedia
+                sx={{ height: 70 }}
+                image={mimcatBg}
+                title="Discord Background"
+              />
+              <CardContent sx={{ height: 40, padding: "24px", lineHeight: 40 }}>
+                <Box
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
+                  height="100%"
+                  textAlign="center"
+                >
+                  <Typography variant="h6" component="div">
+                    Discord Bot - Mimcat
+                  </Typography>
+                </Box>
+              </CardContent>
+            </CardActionArea>
+          </a>
+        </Card>
+      </Grid>
+    </Grid>
   );
 };
 
