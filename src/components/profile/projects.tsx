@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography";
 import gtfoBg from "../../assets/gtfo_bg.jpg";
 import mimcatBg from "../../assets/discord_bg.jpg";
 import { Box } from "@mui/material";
+import Link from '@mui/material/Link';
 
 const Projects = () => {
   return (
@@ -18,17 +19,21 @@ const Projects = () => {
             bgcolor: "#DADADA",
             borderRadius: "12px",
             transition:
-              "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
+              "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out",
             "&:hover": {
               transform: "scale(1.05)",
               boxShadow: "0 4px 20px rgba(0, 0, 0, 0.2)",
+              backgroundColor: "#0A2E5C", // Change to solid color on hover
+              color: "#EAEAEA"
             },
           }}
         >
-          <a
+          <Link
             href="https://github.com/TheFox-cmd/GTFO_logTracker"
             target="_blank"
             rel="noopener noreferrer"
+            underline="none"
+            color="inherit"
           >
             <CardActionArea>
               <CardMedia
@@ -50,7 +55,7 @@ const Projects = () => {
                 </Box>
               </CardContent>
             </CardActionArea>
-          </a>
+          </Link>
         </Card>
       </Grid>
       <Grid size={4} color="white">
@@ -60,17 +65,21 @@ const Projects = () => {
             bgcolor: "#DADADA",
             borderRadius: "12px",
             transition:
-              "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
+              "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out",
             "&:hover": {
               transform: "scale(1.05)",
               boxShadow: "0 4px 20px rgba(0, 0, 0, 0.2)",
+              backgroundColor: "#0A2E5C", // Change to solid color on hover
+              color: "#EAEAEA"
             },
           }}
         >
-          <a
+          <Link
             href="https://github.com/TheFox-cmd/GTFO_logTracker"
             target="_blank"
             rel="noopener noreferrer"
+            underline="none"
+            color="inherit"
           >
             <CardActionArea>
               <CardMedia
@@ -92,7 +101,7 @@ const Projects = () => {
                 </Box>
               </CardContent>
             </CardActionArea>
-          </a>
+          </Link>
         </Card>
       </Grid>
     </Grid>
