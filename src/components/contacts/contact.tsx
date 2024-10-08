@@ -69,7 +69,7 @@ const Contact = () => {
                 lineHeight="48px"
                 textAlign="center"
               >
-                Email: rkoda@gmail.com
+                Email: rkoda997@gmail.com
               </Typography>
             </Grid>
             <Grid

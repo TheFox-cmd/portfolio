@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import gtfoBg from "../../assets/gtfo_bg.jpg";
 import mimcatBg from "../../assets/discord_bg.jpg";
 import { Box } from "@mui/material";
-import Link from '@mui/material/Link';
+import MUILink from '@mui/material/Link';
 
 const Projects = () => {
   return (
@@ -23,12 +23,12 @@ const Projects = () => {
             "&:hover": {
               transform: "scale(1.05)",
               boxShadow: "0 4px 20px rgba(0, 0, 0, 0.2)",
-              backgroundColor: "#0A2E5C", // Change to solid color on hover
+              backgroundColor: "#0A2E5C", 
               color: "#EAEAEA"
             },
           }}
         >
-          <Link
+          <MUILink
             href="https://github.com/TheFox-cmd/GTFO_logTracker"
             target="_blank"
             rel="noopener noreferrer"
@@ -55,7 +55,7 @@ const Projects = () => {
                 </Box>
               </CardContent>
             </CardActionArea>
-          </Link>
+          </MUILink>
         </Card>
       </Grid>
       <Grid size={4} color="white">
@@ -69,12 +69,12 @@ const Projects = () => {
             "&:hover": {
               transform: "scale(1.05)",
               boxShadow: "0 4px 20px rgba(0, 0, 0, 0.2)",
-              backgroundColor: "#0A2E5C", // Change to solid color on hover
+              backgroundColor: "#0A2E5C", 
               color: "#EAEAEA"
             },
           }}
         >
-          <Link
+          <MUILink
             href="https://github.com/TheFox-cmd/GTFO_logTracker"
             target="_blank"
             rel="noopener noreferrer"
@@ -101,7 +101,7 @@ const Projects = () => {
                 </Box>
               </CardContent>
             </CardActionArea>
-          </Link>
+          </MUILink>
         </Card>
       </Grid>
     </Grid>
