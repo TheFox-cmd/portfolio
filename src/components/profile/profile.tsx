@@ -86,7 +86,7 @@ const Profile = () => {
             </Grid>
             <Grid size={4}>
               <MUILink
-                href="www.linkedin.com/in/ryuki-koda"
+                href="https://www.linkedin.com/in/ryuki-koda-b812731b6/"
                 target="_blank"
                 rel="noopener noreferrer"
                 underline="none"
