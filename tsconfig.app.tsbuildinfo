@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/profile.tsx","./src/components/projects.tsx"],"version":"5.6.2"}
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/contacts/contact.tsx","./src/components/contacts/contactform.tsx","./src/components/profile/profile.tsx","./src/components/profile/projects.tsx","./src/components/schema/clientschema.ts"],"version":"5.6.2"}

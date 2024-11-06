@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Profile from './components/profile/profile'
 import Contact from './components/contacts/contact'; 
 import { useEffect, useState } from 'react';
@@ -19,12 +19,15 @@ function App() {
     }
   }, []);
 
+  console.log(path);
+
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Profile />} />
         <Route path="/contacts" element={<Contact />} />
         {/* <Route path="*" element={<NotFound />} />  */}
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   )
