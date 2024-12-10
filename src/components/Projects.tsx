@@ -8,10 +8,18 @@ import gtfoBg from "../assets/gtfo_bg.jpg";
 import mimcatBg from "../assets/discord_bg.jpg";
 import { Box } from "@mui/material";
 import MUILink from "@mui/material/Link";
+import { Nav, ReactSetState } from "../types/Utils";
+import Navigation from "./Navigation";
 
-const Projects = () => {
+interface ProjectsProps {
+  navPage: Nav;
+  setNavPage: ReactSetState<Nav>;
+}
+
+const Projects: React.FC<ProjectsProps> = ({ navPage, setNavPage }) => {
   return (
     <Grid container spacing={2}>
+      <Navigation navPage={navPage} setNavPage={setNavPage} />
       <Grid size={4} color="white">
         <Card
           sx={{

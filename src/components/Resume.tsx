@@ -1,13 +1,16 @@
-const Resume = () => {
+import { Nav, ReactSetState } from "../types/Utils";
+import Navigation from "./Navigation";
+
+interface ResumeProps {
+  navPage: Nav;
+  setNavPage: ReactSetState<Nav>;
+}
+
+const Resume: React.FC<ResumeProps> = ({ navPage, setNavPage }) => {
   return (
-    <div>
-      <h1>Resume</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor
-        metus nec nisl fermentum, in tincidunt nunc ultricies. Donec sit amet
-        nunc nec libero
-      </p>
-    </div>
+    <>
+      <Navigation navPage={navPage} setNavPage={setNavPage} />
+    </>
   );
 };
 

@@ -3,8 +3,15 @@ import ContactForm from "./Contactform";
 import Typography from "@mui/material/Typography";
 import { blue } from "@mui/material/colors";
 import Grid from "@mui/material/Grid2";
+import { Nav, ReactSetState } from "../types/Utils";
+import Navigation from "./Navigation";
 
-const Contact = () => {
+interface ContactProps {
+  navPage: Nav;
+  setNavPage: ReactSetState<Nav>;
+}
+
+const Contact: React.FC<ContactProps> = ({ navPage, setNavPage }) => {
   return (
     <Box
       display="flex"
@@ -17,6 +24,7 @@ const Contact = () => {
           "linear-gradient(45deg, #0C0014 33%, #64b5f6 88%, #bbdefb 100%)",
       }}
     >
+      <Navigation navPage={navPage} setNavPage={setNavPage} />
       <Paper
         elevation={8}
         sx={{

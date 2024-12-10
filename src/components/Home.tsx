@@ -11,11 +11,11 @@ const Home = () => {
   const [navPage, setNavPage] = useState<Nav>("About");
 
   const pages = {
-    About: <About setNavPage={setNavPage} />,
-    Resume: <Resume />,
-    Projects: <Projects />,
-    Contact: <Contact />,
-  }
+    About: <About navPage={navPage} setNavPage={setNavPage}/>,
+    Resume: <Resume navPage={navPage} setNavPage={setNavPage}/>,
+    Projects: <Projects navPage={navPage} setNavPage={setNavPage}/>,
+    Contact: <Contact navPage={navPage} setNavPage={setNavPage}/>,
+  };
 
   return (
     <Grid
