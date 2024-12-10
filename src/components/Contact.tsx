@@ -1,5 +1,5 @@
 import { Box, Paper } from "@mui/material";
-import ContactForm from "./contactform";
+import ContactForm from "./Contactform";
 import Typography from "@mui/material/Typography";
 import { blue } from "@mui/material/colors";
 import Grid from "@mui/material/Grid2";
