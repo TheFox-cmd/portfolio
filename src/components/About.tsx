@@ -4,8 +4,13 @@ import DevicesOutlinedIcon from "@mui/icons-material/DevicesOutlined";
 import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 import SportsEsportsOutlinedIcon from "@mui/icons-material/SportsEsportsOutlined";
 import LinkedCameraOutlinedIcon from "@mui/icons-material/LinkedCameraOutlined";
+import { Nav, ReactSetState } from "../types/Utils";
 
-const About = () => {
+interface AboutProps {
+  setNavPage: ReactSetState<Nav>;
+}
+
+const About: React.FC<AboutProps> = () => {
   return (
     <Grid
       container

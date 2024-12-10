@@ -4,8 +4,8 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import CardActionArea from "@mui/material/CardActionArea";
 import Typography from "@mui/material/Typography";
-import gtfoBg from "../../assets/gtfo_bg.jpg";
-import mimcatBg from "../../assets/discord_bg.jpg";
+import gtfoBg from "../assets/gtfo_bg.jpg";
+import mimcatBg from "../assets/discord_bg.jpg";
 import { Box } from "@mui/material";
 import MUILink from "@mui/material/Link";
 

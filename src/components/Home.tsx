@@ -1,8 +1,22 @@
 import Grid from "@mui/material/Grid2";
 import Profile from "./Profile";
+import { useState } from "react";
+import { Nav } from "../types/Utils";
 import About from "./About";
+import Resume from "./Resume";
+import Projects from "./Projects";
+import Contact from "./Contact";
 
 const Home = () => {
+  const [navPage, setNavPage] = useState<Nav>("About");
+
+  const pages = {
+    About: <About setNavPage={setNavPage} />,
+    Resume: <Resume />,
+    Projects: <Projects />,
+    Contact: <Contact />,
+  }
+
   return (
     <Grid
       container
@@ -16,7 +30,7 @@ const Home = () => {
       }}
     >
       <Profile />
-      <About />
+      {pages[navPage]}
     </Grid>
   );
 };
