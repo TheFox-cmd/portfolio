@@ -17,7 +17,6 @@ const About: React.FC<AboutProps> = ({ navPage, setNavPage }) => {
     <Grid
       container
       direction="column"
-      alignItems="center"
       marginTop="70px"
       padding="36px 16px"
       gap="16px"
