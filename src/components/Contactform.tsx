@@ -34,9 +34,9 @@ const MyTextField: React.FC<MyTextFieldProps> = ({
       variant="outlined"
       sx={{
         width,
-        borderColor: "var(--quaternary-color)",
+        borderColor: "var(--quinary-color)",
         "& label": {
-          color: "var(--quaternary-color)",
+          color: "var(--quinary-color)",
         },
         "& .MuiOutlinedInput-root": {
           "& fieldset": {
@@ -49,11 +49,11 @@ const MyTextField: React.FC<MyTextFieldProps> = ({
             borderColor: "var(--tertiary-color)",
           },
           "& input": {
-            color: "var(--quaternary-color)",
+            color: "var(--quinary-color)",
           },
         },
         "& .MuiInputLabel-root.Mui-focused": {
-          color: "var(--quaternary-color)",
+          color: "var(--quinary-color)",
         },
         "& .MuiInput-underline": {
           borderBottom: "none",
@@ -136,7 +136,7 @@ const ContactForm = () => {
                   variant="contained"
                   type="submit"
                   endIcon={<SendIcon />}
-                  sx={{ bgcolor: "var(--tertiary-color)" }}
+                  sx={{ bgcolor: "var(--tertiary-color)", color: "var(--contrast-color)" }}
                 >
                   Send
                 </Button>

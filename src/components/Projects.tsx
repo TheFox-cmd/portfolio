@@ -82,7 +82,7 @@ const Projects: React.FC<ProjectsProps> = ({ navPage, setNavPage }) => {
               <Card
                 sx={{
                   maxWidth: 345,
-                  color: "var(--quaternary-color)",
+                  color: "var(--quinary-color)",
                   bgcolor: "var(--secondary-color)",
                   border: "2px solid var(--tertiary-color)",
                   borderRadius: "12px",

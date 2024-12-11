@@ -77,6 +77,7 @@ const About: React.FC<AboutProps> = ({ navPage, setNavPage }) => {
             padding="20px"
             borderRadius="12px"
             size={6}
+            sx={{ backgroundColor: "var(--quaternary-color)" }}
           >
             <DevicesOutlinedIcon
               sx={{
@@ -90,7 +91,7 @@ const About: React.FC<AboutProps> = ({ navPage, setNavPage }) => {
                 sx={{
                   fontSize: "16px",
                   fontWeight: "bold",
-                  color: "var(--quaternary-color)",
+                  color: "var(--quinary-color)",
                 }}
               >
                 Web Developer
@@ -99,7 +100,7 @@ const About: React.FC<AboutProps> = ({ navPage, setNavPage }) => {
                 sx={{
                   fontSize: "14px",
                   fontWeight: "normal",
-                  color: "var(--quaternary-color)",
+                  color: "var(--quinary-color)",
                 }}
               >
                 I design and build user-friendly websites using Vite Framework,
@@ -115,6 +116,7 @@ const About: React.FC<AboutProps> = ({ navPage, setNavPage }) => {
             padding="20px"
             borderRadius="12px"
             size={6}
+            sx={{ backgroundColor: "var(--quaternary-color)" }}
           >
             <AppsOutlinedIcon
               sx={{
@@ -123,12 +125,16 @@ const About: React.FC<AboutProps> = ({ navPage, setNavPage }) => {
                 fontSize: "24px",
               }}
             />
-            <Grid container direction="column" gap="4px">
+            <Grid
+              container
+              direction="column"
+              gap="4px"
+            >
               <Typography
                 sx={{
                   fontSize: "16px",
                   fontWeight: "bold",
-                  color: "var(--quaternary-color)",
+                  color: "var(--quinary-color)",
                 }}
               >
                 Python Developer
@@ -137,7 +143,7 @@ const About: React.FC<AboutProps> = ({ navPage, setNavPage }) => {
                 sx={{
                   fontSize: "14px",
                   fontWeight: "normal",
-                  color: "var(--quaternary-color)",
+                  color: "var(--quinary-color)",
                 }}
               >
                 I develop efficient and scalable solutions for automation, data
@@ -153,6 +159,7 @@ const About: React.FC<AboutProps> = ({ navPage, setNavPage }) => {
             padding="20px"
             borderRadius="12px"
             size={6}
+            sx={{ backgroundColor: "var(--quaternary-color)" }}
           >
             <SportsEsportsOutlinedIcon
               sx={{
@@ -166,7 +173,7 @@ const About: React.FC<AboutProps> = ({ navPage, setNavPage }) => {
                 sx={{
                   fontSize: "16px",
                   fontWeight: "bold",
-                  color: "var(--quaternary-color)",
+                  color: "var(--quinary-color)",
                 }}
               >
                 Game Developer
@@ -175,7 +182,7 @@ const About: React.FC<AboutProps> = ({ navPage, setNavPage }) => {
                 sx={{
                   fontSize: "14px",
                   fontWeight: "normal",
-                  color: "var(--quaternary-color)",
+                  color: "var(--quinary-color)",
                 }}
               >
                 I create immersive gaming experiences using the Godot game
@@ -190,6 +197,7 @@ const About: React.FC<AboutProps> = ({ navPage, setNavPage }) => {
             padding="20px"
             borderRadius="12px"
             size={6}
+            sx={{ backgroundColor: "var(--quaternary-color)" }}
           >
             <LinkedCameraOutlinedIcon
               sx={{
@@ -201,7 +209,7 @@ const About: React.FC<AboutProps> = ({ navPage, setNavPage }) => {
                 sx={{
                   fontSize: "16px",
                   fontWeight: "bold",
-                  color: "var(--quaternary-color)",
+                  color: "var(--quinary-color)",
                 }}
               >
                 Photographer
@@ -210,7 +218,7 @@ const About: React.FC<AboutProps> = ({ navPage, setNavPage }) => {
                 sx={{
                   fontSize: "14px",
                   fontWeight: "normal",
-                  color: "var(--quaternary-color)",
+                  color: "var(--quinary-color)",
                 }}
               >
                 Visuals can tell stories. I love to play with the simplicity of

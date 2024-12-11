@@ -1,69 +1,59 @@
 import { GoogleMap, LoadScript, Polygon } from "@react-google-maps/api";
 import locationBoundary from "../data/boundary.json";
-import { GeoPoints } from "../types/Utils";
 
 const googleMapsApiKey = import.meta.env.VITE_GOOGLE_MAP_API_KEY;
-
-const boundaryPoints: GeoPoints[] = locationBoundary;
 
 const mapStyles = [
   {
     elementType: "geometry",
-    stylers: [{ color: "var(--secondary-color)" }],
+    stylers: [{ color: "#333333", visibility: "simplified" }],
   },
   {
     elementType: "labels.text.stroke",
-    stylers: [{ color: "var(--secondary-color)" }],
+    stylers: [{ color: "#2F2F2F" }],
   },
   {
     elementType: "labels.text.fill",
-    stylers: [{ color: "var(--tertiary-color)" }],
+    stylers: [{ color: "#F0F0F0" }],
   },
   {
     featureType: "administrative",
     elementType: "geometry",
-    stylers: [{ color: "var(--secondary-color)" }],
+    stylers: [{ color: "#1C1C1C" }],
   },
   {
     featureType: "administrative.land_parcel",
     stylers: [{ visibility: "off" }],
   },
   {
-    featureType: "poi",
-    elementType: "geometry",
-    stylers: [{ color: "var(--secondary-color)" }],
-  },
-  {
-    featureType: "poi.park",
-    elementType: "geometry",
-    stylers: [{ color: "var(--secondary-color)" }],
-  },
-  {
     featureType: "road",
     elementType: "geometry",
-    stylers: [{ color: "var(--tertiary-color)" }],
+    stylers: [{ color: "#F0F0F0" }],
   },
   {
     featureType: "water",
     elementType: "geometry",
-    stylers: [{ color: "var(--quaternary-color)" }],
+    stylers: [{ color: "#1C1C1C" }],
   },
 ];
 
 const myLocation = {
-  lat: 44.5,
+  lat: 45.0,
   lng: -89.5,
 };
 
 const Map = () => {
+  console.log(locationBoundary);
   return (
     <LoadScript googleMapsApiKey={googleMapsApiKey}>
       <GoogleMap
         mapContainerStyle={{
           height: "35vh",
-          width: "100%", 
+          width: "100%",
+          borderRadius: "12px",
+          overflow: "hidden",
         }}
-        zoom={6}
+        zoom={5.7}
         center={myLocation}
         options={{
           styles: mapStyles,
@@ -71,11 +61,11 @@ const Map = () => {
         }}
       >
         <Polygon
-          path={boundaryPoints}
+          path={locationBoundary}
           options={{
-            fillColor: "var(--primary-color)",
-            fillOpacity: 0.5,
-            strokeColor: "var(--primary-color)",
+            fillColor: "#F0F0F0",
+            fillOpacity: 0.1,
+            strokeColor: "#FFD700",
             strokeOpacity: 0.8,
             strokeWeight: 2,
           }}

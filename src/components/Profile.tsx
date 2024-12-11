@@ -34,7 +34,7 @@ const Profile = () => {
         <Card
           sx={{
             filter: "invert(1)",
-            backgroundColor: "var(--quaternary-color)",
+            backgroundColor: "var(--quinary-color)",
             border: "none",
           }}
         >
@@ -83,7 +83,7 @@ const Profile = () => {
       <Grid
         container
         width="80%"
-        color="var(--quaternary-color)"
+        color="var(--quinary-color)"
         lineHeight="48px"
         justifyContent="left"
         alignItems="center"
@@ -113,7 +113,7 @@ const Profile = () => {
             sx={{
               fontSize: "16px",
               fontWeight: "bold",
-              color: "var(--quaternary-color)",
+              color: "var(--quinary-color)",
               marginBottom: "4px",
             }}
           >
@@ -123,7 +123,7 @@ const Profile = () => {
             sx={{
               fontSize: "14px",
               fontWeight: "normal",
-              color: "var(--quaternary-color)",
+              color: "var(--quinary-color)",
             }}
           >
             rkoda997@gmail.com
@@ -133,7 +133,7 @@ const Profile = () => {
       <Grid
         container
         width="80%"
-        color="var(--quaternary-color)"
+        color="var(--quinary-color)"
         lineHeight="48px"
         justifyContent="left"
         alignItems="center"
@@ -163,7 +163,7 @@ const Profile = () => {
             sx={{
               fontSize: "16px",
               fontWeight: "bold",
-              color: "var(--quaternary-color)",
+              color: "var(--quinary-color)",
               marginBottom: "4px",
             }}
           >
@@ -173,7 +173,7 @@ const Profile = () => {
             sx={{
               fontSize: "14px",
               fontWeight: "normal",
-              color: "var(--quaternary-color)",
+              color: "var(--quinary-color)",
             }}
           >
             (510) 612-6878
@@ -183,7 +183,7 @@ const Profile = () => {
       <Grid
         container
         width="80%"
-        color="var(--quaternary-color)"
+        color="var(--quinary-color)"
         lineHeight="48px"
         justifyContent="left"
         alignItems="center"
@@ -213,7 +213,7 @@ const Profile = () => {
             sx={{
               fontSize: "16px",
               fontWeight: "bold",
-              color: "var(--quaternary-color)",
+              color: "var(--quinary-color)",
               marginBottom: "4px",
             }}
           >
@@ -223,7 +223,7 @@ const Profile = () => {
             sx={{
               fontSize: "14px",
               fontWeight: "normal",
-              color: "var(--quaternary-color)",
+              color: "var(--quinary-color)",
             }}
           >
             WI, USA

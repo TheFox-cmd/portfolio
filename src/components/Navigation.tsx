@@ -15,7 +15,7 @@ const Navigation: React.FC<NavigationProps> = ({ navPage, setNavPage }) => {
       gap="48px"
       borderRadius="0 12px"
       padding="12px 24px"
-      color="var(--quaternary-color)"
+      color="var(--quinary-color)"
       sx={{ backgroundColor: "var(--tertiary-color)" }}
       position="absolute"
       top="0"
@@ -48,7 +48,7 @@ const Navigation: React.FC<NavigationProps> = ({ navPage, setNavPage }) => {
             color:
               navPage === "About"
                 ? "var(--contrast-color)"
-                : "var(--quaternary-color)",
+                : "var(--quinary-color)",
           }}
         >
           About
@@ -81,7 +81,7 @@ const Navigation: React.FC<NavigationProps> = ({ navPage, setNavPage }) => {
             color:
               navPage === "Resume"
                 ? "var(--contrast-color)"
-                : "var(--quaternary-color)",
+                : "var(--quinary-color)",
           }}
         >
           Resume
@@ -114,7 +114,7 @@ const Navigation: React.FC<NavigationProps> = ({ navPage, setNavPage }) => {
             color:
               navPage === "Projects"
                 ? "var(--contrast-color)"
-                : "var(--quaternary-color)",
+                : "var(--quinary-color)",
           }}
         >
           Projects
@@ -147,7 +147,7 @@ const Navigation: React.FC<NavigationProps> = ({ navPage, setNavPage }) => {
             color:
               navPage === "Contact"
                 ? "var(--contrast-color)"
-                : "var(--quaternary-color)",
+                : "var(--quinary-color)",
           }}
         >
           Contact
