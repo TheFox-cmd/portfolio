@@ -226,7 +226,7 @@ const Profile = () => {
               color: "var(--quaternary-color)",
             }}
           >
-            Lodi, WI
+            WI, USA
           </Typography>
         </Grid>
 

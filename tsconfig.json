@@ -3,5 +3,13 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
-  ]
+  ],
+  "compilerOptions": {
+    "module": "commonjs",         
+    "target": "esnext",           
+    "resolveJsonModule": true,    
+    "esModuleInterop": true,      
+    "skipLibCheck": true,         
+    "forceConsistentCasingInFileNames": true
+  },
 }

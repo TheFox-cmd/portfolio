@@ -3,6 +3,7 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid2";
 import { Nav, ReactSetState } from "../types/Utils";
 import Navigation from "./Navigation";
+import Map from "./Map";
 
 interface ContactProps {
   navPage: Nav;
@@ -46,7 +47,7 @@ const Contact: React.FC<ContactProps> = ({ navPage, setNavPage }) => {
       </Grid>
 
       <Navigation navPage={navPage} setNavPage={setNavPage} />
-
+      <Map />
       <ContactForm />
     </Grid>
   );
