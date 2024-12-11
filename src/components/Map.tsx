@@ -61,7 +61,7 @@ const Map = () => {
       <GoogleMap
         mapContainerStyle={{
           height: "35vh",
-          width: "100%", // Ensure the map takes up the full width
+          width: "100%", 
         }}
         zoom={6}
         center={myLocation}

@@ -32,9 +32,9 @@ const Navigation: React.FC<NavigationProps> = ({ navPage, setNavPage }) => {
             position: "absolute",
             bottom: 0,
             left: "50%",
-            width: navPage === "About" ? "80%" : "0%",
+            width: "0%",
             height: "2px",
-            backgroundColor: "var(--contrast-color)",
+            backgroundColor: navPage === "About" ? "var(--tertiary-color)" : "var(--contrast-color)",
             transition: "all 0.3s ease",
             transform: "translateX(-50%)",
           },
@@ -43,7 +43,16 @@ const Navigation: React.FC<NavigationProps> = ({ navPage, setNavPage }) => {
           },
         }}
       >
-        <Typography>About</Typography>
+        <Typography
+          sx={{
+            color:
+              navPage === "About"
+                ? "var(--contrast-color)"
+                : "var(--quaternary-color)",
+          }}
+        >
+          About
+        </Typography>
       </Button>
       <Button
         variant="text"
@@ -56,9 +65,9 @@ const Navigation: React.FC<NavigationProps> = ({ navPage, setNavPage }) => {
             position: "absolute",
             bottom: 0,
             left: "50%",
-            width: navPage === "Resume" ? "80%" : "0%",
+            width: "0%",
             height: "2px",
-            backgroundColor: "var(--contrast-color)",
+            backgroundColor: navPage === "Resume" ? "var(--tertiary-color)" : "var(--contrast-color)",
             transition: "all 0.3s ease",
             transform: "translateX(-50%)",
           },
@@ -67,7 +76,16 @@ const Navigation: React.FC<NavigationProps> = ({ navPage, setNavPage }) => {
           },
         }}
       >
-        <Typography>Resume</Typography>
+        <Typography
+          sx={{
+            color:
+              navPage === "Resume"
+                ? "var(--contrast-color)"
+                : "var(--quaternary-color)",
+          }}
+        >
+          Resume
+        </Typography>
       </Button>
       <Button
         variant="text"
@@ -80,9 +98,9 @@ const Navigation: React.FC<NavigationProps> = ({ navPage, setNavPage }) => {
             position: "absolute",
             bottom: 0,
             left: "50%",
-            width: navPage === "Projects" ? "80%" : "0%",
+            width: "0%",
+            backgroundColor: navPage === "Projects" ? "var(--tertiary-color)" : "var(--contrast-color)",
             height: "2px",
-            backgroundColor: "var(--contrast-color)",
             transition: "all 0.3s ease",
             transform: "translateX(-50%)",
           },
@@ -91,7 +109,16 @@ const Navigation: React.FC<NavigationProps> = ({ navPage, setNavPage }) => {
           },
         }}
       >
-        <Typography>Projects</Typography>
+        <Typography
+          sx={{
+            color:
+              navPage === "Projects"
+                ? "var(--contrast-color)"
+                : "var(--quaternary-color)",
+          }}
+        >
+          Projects
+        </Typography>
       </Button>
       <Button
         variant="text"
@@ -104,9 +131,9 @@ const Navigation: React.FC<NavigationProps> = ({ navPage, setNavPage }) => {
             position: "absolute",
             bottom: 0,
             left: "50%",
-            width: navPage === "Contact" ? "80%" : "0%",
+            width: "0%",
             height: "2px",
-            backgroundColor: "var(--contrast-color)",
+            backgroundColor: navPage === "Contact" ? "var(--tertiary-color)" : "var(--contrast-color)",
             transition: "all 0.3s ease",
             transform: "translateX(-50%)",
           },
@@ -115,7 +142,16 @@ const Navigation: React.FC<NavigationProps> = ({ navPage, setNavPage }) => {
           },
         }}
       >
-        <Typography fontWeight="normal">Contact</Typography>
+        <Typography
+          sx={{
+            color:
+              navPage === "Contact"
+                ? "var(--contrast-color)"
+                : "var(--quaternary-color)",
+          }}
+        >
+          Contact
+        </Typography>
       </Button>
     </Grid>
   );

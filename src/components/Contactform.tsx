@@ -2,14 +2,11 @@ import emailjs from "@emailjs/browser";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid2";
 import SendIcon from "@mui/icons-material/Send";
-import HomeIcon from '@mui/icons-material/Home';
 import * as React from "react";
 import * as Yup from "yup";
-
 import { Formik, Form, useField, FieldHookConfig } from "formik";
 import { TextField } from "@mui/material";
 import ClientSchema from "../schema/clientSchema";
-import { Link } from "react-router-dom";
 
 type ClientInfo = Yup.InferType<typeof ClientSchema>;
 
@@ -34,8 +31,34 @@ const MyTextField: React.FC<MyTextFieldProps> = ({
       helperText={meta.error}
       multiline={multiline}
       rows={multiline ? 4 : undefined}
-      variant="standard"
-      sx={{ width }}
+      variant="outlined"
+      sx={{
+        width,
+        borderColor: "var(--quaternary-color)",
+        "& label": {
+          color: "var(--quaternary-color)",
+        },
+        "& .MuiOutlinedInput-root": {
+          "& fieldset": {
+            borderColor: "var(--tertiary-color)",
+          },
+          "&:hover fieldset": {
+            borderColor: "var(--tertiary-color)",
+          },
+          "&.Mui-focused fieldset": {
+            borderColor: "var(--tertiary-color)",
+          },
+          "& input": {
+            color: "var(--quaternary-color)",
+          },
+        },
+        "& .MuiInputLabel-root.Mui-focused": {
+          color: "var(--quaternary-color)",
+        },
+        "& .MuiInput-underline": {
+          borderBottom: "none",
+        },
+      }}
     />
   );
 };
@@ -43,14 +66,12 @@ const MyTextField: React.FC<MyTextFieldProps> = ({
 const ContactForm = () => {
   const handleEmail = ({
     clientName,
-    clientProject,
     clientEmail,
+    clientProject,
   }: ClientInfo) => {
-    const message = `Hello, my name is ${clientName} and I am looking for you to help me with ${clientProject}. You can reach me at ${clientEmail}`;
-
     const mailTemplate = {
       from_name: clientName,
-      message: message,
+      message: clientProject,
       reply_to: clientEmail,
     };
 
@@ -78,8 +99,8 @@ const ContactForm = () => {
       <Formik
         initialValues={{
           clientName: "",
-          clientProject: "",
           clientEmail: "",
+          clientProject: "",
         }}
         validationSchema={ClientSchema}
         onSubmit={(values: ClientInfo, actions) => {
@@ -90,94 +111,36 @@ const ContactForm = () => {
       >
         {() => (
           <Form>
-            <Grid container height="65px">
-              <Grid
-                fontWeight="bold"
-                fontSize="16px"
-                width="190px"
-                height="65px"
-                lineHeight="65px"
-              >
-                Hello there, my name is
+            <Grid container height="fit-content" spacing={2}>
+              <Grid size={6}>
+                <MyTextField label="Your Name" name="clientName" width="100%" />
               </Grid>
-              <Grid
-                padding="2px 0 0 0"
-                fontWeight="bold"
-                fontSize="16px"
-                height="65px"
-                lineHeight="65px"
-              >
+              <Grid size={6}>
                 <MyTextField
-                  name="clientName"
-                  type="text"
-                  label="your name"
-                  width="300px"
-                />
-              </Grid>
-            </Grid>
-            <Grid container>
-              <Grid
-                fontWeight="bold"
-                fontSize="16px"
-                size={12}
-                height="25px"
-                lineHeight="25px"
-              >
-                and I am looking for you to help me with
-              </Grid>
-              <Grid fontWeight="bold" fontSize="20px" size={12}>
-                <MyTextField
-                  name="clientProject"
-                  type="text"
-                  label="brief project description"
-                  multiline
-                  width="490px"
-                />
-              </Grid>
-            </Grid>
-            <Grid container height="65px">
-              <Grid
-                fontWeight="bold"
-                fontSize="16px"
-                width="160px"
-                height="65px"
-                lineHeight="65px"
-              >
-                You can reach me at
-              </Grid>
-              <Grid
-                padding="2px 0 0 0"
-                fontWeight="bold"
-                fontSize="16px"
-                height="65px"
-                lineHeight="65px"
-              >
-                <MyTextField
+                  label="Your Email"
                   name="clientEmail"
-                  type="text"
-                  label="your email address"
-                  width="330px"
+                  width="100%"
                 />
               </Grid>
-            </Grid>
-            <Grid container justifyContent="space-between" margin="30px 30px 0 0">
-              <Button
-                component={Link}
-                to="/"
-                variant="contained"
-                endIcon={<HomeIcon />} 
-                sx={{ bgcolor: "#0A2E5C" }}
-              >
-                Home
-              </Button>
-              <Button
-                variant="contained"
-                type="submit"
-                endIcon={<SendIcon />}
-                sx={{ bgcolor: "#0A2E5C" }}
-              >
-                Send
-              </Button>
+              <Grid size={12}>
+                <MyTextField
+                  label="Your Message"
+                  name="clientProject"
+                  multiline
+                  required
+                  width="100%"
+                />
+              </Grid>
+              <Grid container justifyContent="flex-end" size={12}>
+                <Button
+                  variant="contained"
+                  type="submit"
+                  endIcon={<SendIcon />}
+                  sx={{ bgcolor: "var(--tertiary-color)" }}
+                >
+                  Send
+                </Button>
+              </Grid>
             </Grid>
           </Form>
         )}
