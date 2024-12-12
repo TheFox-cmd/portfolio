@@ -10,7 +10,7 @@ import Contact from "./Contact";
 const Home = () => {
   // ! 1. Navigation : About - Contact changes page fonts 
   // ! 2. Over 100vh has a horizontal scroll bar
-  
+  // ! 3. About icon is not aligned  
   const [navPage, setNavPage] = useState<Nav>("About");
 
   const pages = {

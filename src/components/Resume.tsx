@@ -7,6 +7,7 @@ import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import StepContent from "@mui/material/StepContent";
+import Skills from "./Skills";
 
 interface ResumeProps {
   navPage: Nav;
@@ -31,6 +32,25 @@ const steps = [
     period: "2020 - 2021",
     description:
       "Description for step 2Description for step 2Description for step 2Description for step 2Description for step 2Description for step 2Description for step 2",
+  },
+];
+
+const mySkills = [
+  {
+    name: "Python",
+    proficiency: 60,
+  },
+  {
+    name: "React Typescript",
+    proficiency: 70,
+  },
+  {
+    name: "MongoDB",
+    proficiency: 50,
+  },
+  {
+    name: "AWS",
+    proficiency: 30,
   },
 ];
 
@@ -129,7 +149,7 @@ const Resume: React.FC<ResumeProps> = ({ navPage, setNavPage }) => {
                     fontSize: "20px !important",
                   },
                   "&.Mui-active .MuiStepLabel-label": {
-                    color: "var(--quinary-color) !important", 
+                    color: "var(--quinary-color) !important",
                     fontWeight: "bold !important",
                     fontSize: "20px !important",
                   },
@@ -159,6 +179,40 @@ const Resume: React.FC<ResumeProps> = ({ navPage, setNavPage }) => {
             </Step>
           ))}
         </Stepper>
+      </Grid>
+      <Grid container direction="column" padding="12px" gap="24px">
+        <Typography
+          variant="h5"
+          fontWeight="bold"
+          lineHeight="16px"
+          color="var(--quinary-color)"
+        >
+          My Skills
+        </Typography>
+        {mySkills.map((skill, index) => (
+          <Grid
+            container
+            direction="column"
+            gap="12px"
+            sx={{
+              padding: "16px",
+              backgroundColor: "var(--tertiary-color)",
+              border: "1px solid var(--quaternary-color)",
+              borderRadius: "12px",
+            }}
+            key={index}
+          >
+            <Typography
+              variant="body1"
+              fontWeight="bold"
+              lineHeight="16px"
+              color="var(--quinary-color)"
+            >
+              {skill.name + " - " + skill.proficiency + "%"}
+            </Typography>
+            <Skills proficiency={skill.proficiency} />
+          </Grid>
+        ))}
       </Grid>
     </Grid>
   );

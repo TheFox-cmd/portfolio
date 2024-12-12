@@ -12,6 +12,33 @@ interface AboutProps {
   setNavPage: ReactSetState<Nav>;
 }
 
+const myWork = [
+  {
+    icon: <DevicesOutlinedIcon sx={{ color: "var(--contrast-color)" }} />,
+    title: "Web Developer",
+    description:
+      "I design and build user-friendly websites using Vite Framework, React Typescript, and Material-UI. My focus is on creating visually appealing and functional interfaces that enhance user experience.",
+  },
+  {
+    icon: <AppsOutlinedIcon sx={{ color: "var(--contrast-color)" }} />,
+    title: "Python Developer",
+    description:
+      "I develop efficient and scalable solutions for automation, data analysis, and web backends using Python. I enjoy writing clean, maintainable code to solve complex problems and streamline workflows.",
+  },
+  {
+    icon: <SportsEsportsOutlinedIcon sx={{ color: "var(--contrast-color)" }} />,
+    title: "Game Developer",
+    description:
+      "I create immersive gaming experiences using the Godot game engine. I love to program gameplay mechanics, design levels, and create fascinating stories.",
+  },
+  {
+    icon: <LinkedCameraOutlinedIcon sx={{ color: "var(--contrast-color)" }} />,
+    title: "Photographer",
+    description:
+      "Visuals can tell stories. I love to play with the simplicity of lights and shadows to capture the perfect moment.",
+  },
+];
+
 const About: React.FC<AboutProps> = ({ navPage, setNavPage }) => {
   return (
     <Grid
@@ -70,162 +97,40 @@ const About: React.FC<AboutProps> = ({ navPage, setNavPage }) => {
         >
           My Work
         </Typography>
-        <Grid container spacing={2}>
-          <Grid
-            container
-            border="1px solid var(--tertiary-color)"
-            padding="20px"
-            borderRadius="12px"
-            size={6}
-            sx={{ backgroundColor: "var(--quaternary-color)" }}
-          >
-            <DevicesOutlinedIcon
-              sx={{
-                color: "var(--contrast-color)",
-                marginRight: "12px",
-                fontSize: "24px",
-              }}
-            />
-            <Grid container direction="column" gap="4px">
-              <Typography
-                sx={{
-                  fontSize: "16px",
-                  fontWeight: "bold",
-                  color: "var(--quinary-color)",
-                }}
-              >
-                Web Developer
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: "14px",
-                  fontWeight: "normal",
-                  color: "var(--quinary-color)",
-                }}
-              >
-                I design and build user-friendly websites using Vite Framework,
-                React Typescript, and Material-UI. My focus is on creating
-                visually appealing and functional interfaces that enhance user
-                experience.
-              </Typography>
-            </Grid>
-          </Grid>
-          <Grid
-            container
-            border="1px solid var(--tertiary-color)"
-            padding="20px"
-            borderRadius="12px"
-            size={6}
-            sx={{ backgroundColor: "var(--quaternary-color)" }}
-          >
-            <AppsOutlinedIcon
-              sx={{
-                color: "var(--contrast-color)",
-                marginRight: "12px",
-                fontSize: "24px",
-              }}
-            />
+        <Grid container spacing={1}>
+          {myWork.map((work, index) => (
             <Grid
+              key={index}
               container
-              direction="column"
-              gap="4px"
+              border="1px solid var(--quaternary-color)"
+              padding="16px"
+              borderRadius="12px"
+              size={6}
+              sx={{ backgroundColor: "var(--tertiary-color)" }}
             >
-              <Typography
-                sx={{
-                  fontSize: "16px",
-                  fontWeight: "bold",
-                  color: "var(--quinary-color)",
-                }}
-              >
-                Python Developer
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: "14px",
-                  fontWeight: "normal",
-                  color: "var(--quinary-color)",
-                }}
-              >
-                I develop efficient and scalable solutions for automation, data
-                analysis, and web backends using Python. I enjoy writing clean,
-                maintainable code to solve complex problems and streamline
-                workflows.
-              </Typography>
+              <Grid>{work.icon}</Grid>
+              <Grid container direction="column" gap="4px">
+                <Typography
+                  sx={{
+                    fontSize: "16px",
+                    fontWeight: "bold",
+                    color: "var(--quinary-color)",
+                  }}
+                >
+                  {work.title}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "14px",
+                    fontWeight: "normal",
+                    color: "var(--quinary-color)",
+                  }}
+                >
+                  {work.description}
+                </Typography>
+              </Grid>
             </Grid>
-          </Grid>
-          <Grid
-            container
-            border="1px solid var(--tertiary-color)"
-            padding="20px"
-            borderRadius="12px"
-            size={6}
-            sx={{ backgroundColor: "var(--quaternary-color)" }}
-          >
-            <SportsEsportsOutlinedIcon
-              sx={{
-                color: "var(--contrast-color)",
-                marginRight: "12px",
-                fontSize: "24px",
-              }}
-            />
-            <Grid container direction="column" gap="4px">
-              <Typography
-                sx={{
-                  fontSize: "16px",
-                  fontWeight: "bold",
-                  color: "var(--quinary-color)",
-                }}
-              >
-                Game Developer
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: "14px",
-                  fontWeight: "normal",
-                  color: "var(--quinary-color)",
-                }}
-              >
-                I create immersive gaming experiences using the Godot game
-                engine. I love to program gameplay mechanics, design levels, and
-                create fascinating stories.
-              </Typography>
-            </Grid>
-          </Grid>
-          <Grid
-            container
-            border="1px solid var(--tertiary-color)"
-            padding="20px"
-            borderRadius="12px"
-            size={6}
-            sx={{ backgroundColor: "var(--quaternary-color)" }}
-          >
-            <LinkedCameraOutlinedIcon
-              sx={{
-                color: "var(--contrast-color)",
-              }}
-            />
-            <Grid container direction="column" gap="4px">
-              <Typography
-                sx={{
-                  fontSize: "16px",
-                  fontWeight: "bold",
-                  color: "var(--quinary-color)",
-                }}
-              >
-                Photographer
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: "14px",
-                  fontWeight: "normal",
-                  color: "var(--quinary-color)",
-                }}
-              >
-                Visuals can tell stories. I love to play with the simplicity of
-                lights and shadows to capture the perfect moment.
-              </Typography>
-            </Grid>
-          </Grid>
+          ))}
         </Grid>
       </Grid>
     </Grid>
