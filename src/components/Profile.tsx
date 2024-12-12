@@ -229,7 +229,6 @@ const Profile = () => {
             WI, USA
           </Typography>
         </Grid>
-
         <Grid container width="100%" textAlign="center">
           <Grid size={4}>
             <MUILink

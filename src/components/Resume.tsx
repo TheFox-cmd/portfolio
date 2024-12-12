@@ -2,11 +2,37 @@ import Grid from "@mui/material/Grid2";
 import Typography from "@mui/material/Typography";
 import { Nav, ReactSetState } from "../types/Utils";
 import Navigation from "./Navigation";
+import TerminalOutlinedIcon from "@mui/icons-material/TerminalOutlined";
+import Stepper from "@mui/material/Stepper";
+import Step from "@mui/material/Step";
+import StepLabel from "@mui/material/StepLabel";
+import StepContent from "@mui/material/StepContent";
 
 interface ResumeProps {
   navPage: Nav;
   setNavPage: ReactSetState<Nav>;
 }
+
+const steps = [
+  {
+    label: "Step 1",
+    period: "2020 - 2021",
+    description:
+      "Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1",
+  },
+  {
+    label: "Step 2",
+    period: "2020 - 2021",
+    description:
+      "Description for step 2Description for step 2Description for step 2Description for step 2Description for step 2Description for step 2Description for step 2",
+  },
+  {
+    label: "Step 3",
+    period: "2020 - 2021",
+    description:
+      "Description for step 2Description for step 2Description for step 2Description for step 2Description for step 2Description for step 2Description for step 2",
+  },
+];
 
 const Resume: React.FC<ResumeProps> = ({ navPage, setNavPage }) => {
   return (
@@ -43,8 +69,175 @@ const Resume: React.FC<ResumeProps> = ({ navPage, setNavPage }) => {
           }}
         />
       </Grid>
+      <Grid container direction="column" padding="12px" gap="12px">
+        <Grid container alignItems="center">
+          <Grid
+            sx={{
+              border: "1px solid var(--tertiary-color)",
+              padding: "20px",
+              width: "24px",
+              height: "24px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              borderRadius: "12px",
+              marginRight: "12px",
+            }}
+          >
+            <TerminalOutlinedIcon
+              sx={{
+                fontSize: "24px",
+                color: "var(--contrast-color)",
+              }}
+            />
+          </Grid>
+          <Typography
+            variant="h5"
+            fontWeight="bold"
+            color="var(--quinary-color)"
+          >
+            Experience
+          </Typography>
+        </Grid>
+        <Stepper
+          orientation="vertical"
+          sx={{
+            position: "relative",
+            borderRadius: "12px",
+            padding: "0 9px",
+          }}
+        >
+          {steps.map((step, index) => (
+            <Step key={index} active>
+              <StepLabel
+                StepIconComponent={() => (
+                  <span
+                    style={{
+                      width: "24px",
+                      height: "24px",
+                      backgroundColor: "var(--contrast-color)",
+                      border: "6px solid var(--tertiary-color)",
+                      borderRadius: "50%",
+                      display: "inline-block",
+                    }}
+                  />
+                )}
+                sx={{
+                  "& .MuiStepLabel-label": {
+                    color: "var(--quinary-color) !important",
+                    fontWeight: "bold !important",
+                    fontSize: "20px !important",
+                  },
+                  "&.Mui-active .MuiStepLabel-label": {
+                    color: "var(--quinary-color) !important", 
+                    fontWeight: "bold !important",
+                    fontSize: "20px !important",
+                  },
+                }}
+              >
+                {step.label}
+              </StepLabel>
+              <StepContent>
+                <Typography
+                  sx={{
+                    color: "var(--contrast-color)",
+                    fontWeight: "normal",
+                    fontStyle: "italic",
+                  }}
+                >
+                  {step.period}
+                </Typography>
+                <Typography
+                  sx={{
+                    color: "var(--quinary-color)",
+                    fontWeight: "normal",
+                  }}
+                >
+                  {step.description}
+                </Typography>
+              </StepContent>
+            </Step>
+          ))}
+        </Stepper>
+      </Grid>
     </Grid>
   );
 };
 
 export default Resume;
+
+{
+  /* <Grid container direction="column" padding="12px" gap="12px">
+  <Grid container alignItems="center">
+    <Grid
+      sx={{
+        border: "1px solid var(--tertiary-color)",
+        padding: "20px",
+        width: "24px",
+        height: "24px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: "12px",
+        marginRight: "12px",
+      }}
+    >
+      <TerminalOutlinedIcon
+        sx={{
+          fontSize: "24px",
+          color: "var(--contrast-color)",
+        }}
+      />
+    </Grid>
+    <Typography variant="h5" fontWeight="bold" color="var(--quinary-color)">
+      Experience
+    </Typography>
+  </Grid>
+  <Stepper
+    orientation="vertical"
+    sx={{
+      position: "relative",
+      borderRadius: "12px",
+      padding: "0 9px",
+    }}
+  >
+    {steps.map((step, index) => (
+      <Step key={index} active>
+        <StepLabel
+          StepIconComponent={() => (
+            <span
+              style={{
+                width: "24px",
+                height: "24px",
+                backgroundColor: "var(--contrast-color)",
+                border: "6px solid var(--tertiary-color)",
+                borderRadius: "50%",
+                display: "inline-block",
+              }}
+            />
+          )}
+          sx={{
+            "& .MuiStepLabel-label": {
+              color: "var(--quinary-color)",
+              fontWeight: "bold",
+              fontSize: "16px",
+            },
+          }}
+        >
+          {step.label}
+        </StepLabel>
+        <StepContent
+          sx={{
+            "& .MuiTypography-root": {
+              color: "var(--quinary-color)",
+              fontWeight: "normal",
+            },
+          }}
+        >
+          <Typography>{step.description}</Typography>
+        </StepContent>
+      </Step>
+    ))}
+  </Stepper>
+</Grid>; */
+}

@@ -8,6 +8,9 @@ import Projects from "./Projects";
 import Contact from "./Contact";
 
 const Home = () => {
+  // ! 1. Navigation : About - Contact changes page fonts 
+  // ! 2. Over 100vh has a horizontal scroll bar
+  
   const [navPage, setNavPage] = useState<Nav>("About");
 
   const pages = {
@@ -21,7 +24,8 @@ const Home = () => {
     <Grid
       container
       width="100vw"
-      height="100vh"
+      minHeight="100vh"
+      height="fit-content"
       gap="16px"
       padding="36px"
       justifyContent="center"

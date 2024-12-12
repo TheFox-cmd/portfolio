@@ -43,7 +43,6 @@ const myLocation = {
 };
 
 const Map = () => {
-  console.log(locationBoundary);
   return (
     <LoadScript googleMapsApiKey={googleMapsApiKey}>
       <GoogleMap
