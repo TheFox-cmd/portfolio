@@ -11,12 +11,12 @@ const Skills: React.FC<SkillsProps> = ({ proficiency }) => {
       value={proficiency}
       sx={{
         "& .MuiLinearProgress-bar": {
-          backgroundColor: "var(--contrast-color)", 
+          backgroundColor: "var(--contrast-color)",
         },
         "& .MuiLinearProgress-dashed": {
-          backgroundColor: "transparent", 
+          backgroundColor: "transparent",
         },
-        backgroundColor: "var(--quaternary-color)", 
+        backgroundColor: "var(--quaternary-color)",
         borderRadius: "12px",
       }}
     />

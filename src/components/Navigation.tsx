@@ -34,7 +34,10 @@ const Navigation: React.FC<NavigationProps> = ({ navPage, setNavPage }) => {
             left: "50%",
             width: "0%",
             height: "2px",
-            backgroundColor: navPage === "About" ? "var(--tertiary-color)" : "var(--contrast-color)",
+            backgroundColor:
+              navPage === "About"
+                ? "var(--tertiary-color)"
+                : "var(--contrast-color)",
             transition: "all 0.3s ease",
             transform: "translateX(-50%)",
           },
@@ -67,7 +70,10 @@ const Navigation: React.FC<NavigationProps> = ({ navPage, setNavPage }) => {
             left: "50%",
             width: "0%",
             height: "2px",
-            backgroundColor: navPage === "Resume" ? "var(--tertiary-color)" : "var(--contrast-color)",
+            backgroundColor:
+              navPage === "Resume"
+                ? "var(--tertiary-color)"
+                : "var(--contrast-color)",
             transition: "all 0.3s ease",
             transform: "translateX(-50%)",
           },
@@ -99,7 +105,10 @@ const Navigation: React.FC<NavigationProps> = ({ navPage, setNavPage }) => {
             bottom: 0,
             left: "50%",
             width: "0%",
-            backgroundColor: navPage === "Projects" ? "var(--tertiary-color)" : "var(--contrast-color)",
+            backgroundColor:
+              navPage === "Projects"
+                ? "var(--tertiary-color)"
+                : "var(--contrast-color)",
             height: "2px",
             transition: "all 0.3s ease",
             transform: "translateX(-50%)",
@@ -133,7 +142,10 @@ const Navigation: React.FC<NavigationProps> = ({ navPage, setNavPage }) => {
             left: "50%",
             width: "0%",
             height: "2px",
-            backgroundColor: navPage === "Contact" ? "var(--tertiary-color)" : "var(--contrast-color)",
+            backgroundColor:
+              navPage === "Contact"
+                ? "var(--tertiary-color)"
+                : "var(--contrast-color)",
             transition: "all 0.3s ease",
             transform: "translateX(-50%)",
           },

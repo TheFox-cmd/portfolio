@@ -136,7 +136,10 @@ const ContactForm = () => {
                   variant="contained"
                   type="submit"
                   endIcon={<SendIcon />}
-                  sx={{ bgcolor: "var(--tertiary-color)", color: "var(--contrast-color)" }}
+                  sx={{
+                    bgcolor: "var(--tertiary-color)",
+                    color: "var(--contrast-color)",
+                  }}
                 >
                   Send
                 </Button>

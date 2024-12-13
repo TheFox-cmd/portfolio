@@ -8,16 +8,16 @@ import Projects from "./Projects";
 import Contact from "./Contact";
 
 const Home = () => {
-  // ! 1. Navigation : About - Contact changes page fonts 
+  // ! 1. Navigation : About - Contact changes page fonts
   // ! 2. Over 100vh has a horizontal scroll bar
-  // ! 3. About icon is not aligned  
+  // ! 3. Icon in About are not aligned
   const [navPage, setNavPage] = useState<Nav>("About");
 
   const pages = {
-    About: <About navPage={navPage} setNavPage={setNavPage}/>,
-    Resume: <Resume navPage={navPage} setNavPage={setNavPage}/>,
-    Projects: <Projects navPage={navPage} setNavPage={setNavPage}/>,
-    Contact: <Contact navPage={navPage} setNavPage={setNavPage}/>,
+    About: <About navPage={navPage} setNavPage={setNavPage} />,
+    Resume: <Resume navPage={navPage} setNavPage={setNavPage} />,
+    Projects: <Projects navPage={navPage} setNavPage={setNavPage} />,
+    Contact: <Contact navPage={navPage} setNavPage={setNavPage} />,
   };
 
   return (

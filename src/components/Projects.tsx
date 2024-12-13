@@ -28,12 +28,12 @@ const projects = [
     link: "https://glittering-unicorn-c87859.netlify.app",
     image: omnifood,
     title: "Omnifood Landing Page",
-  }, 
+  },
   {
     link: "https://mellifluous-belekoy-c5d336.netlify.app",
     image: tmdb_logo,
     title: "TMDB Movie App",
-  }
+  },
 ];
 
 interface ProjectsProps {

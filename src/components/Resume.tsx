@@ -180,12 +180,13 @@ const Resume: React.FC<ResumeProps> = ({ navPage, setNavPage }) => {
           ))}
         </Stepper>
       </Grid>
-      <Grid container direction="column" padding="12px" gap="24px">
+      <Grid container direction="column" padding="12px" gap="6px">
         <Typography
           variant="h5"
           fontWeight="bold"
           lineHeight="16px"
           color="var(--quinary-color)"
+          marginBottom="12px"
         >
           My Skills
         </Typography>
