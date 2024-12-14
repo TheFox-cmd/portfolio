@@ -1,7 +1,6 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './components/Home'
-import Contact from './components/Contact'
 import { useEffect, useState } from 'react';
 // import NotFound from './NotFound'; // Optional: Not found component
 
@@ -25,7 +24,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/contacts" element={<Contact />} />
+        {/* <Route path="/contacts" element={<Contact />} /> */}
         {/* <Route path="*" element={<NotFound />} />  */}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

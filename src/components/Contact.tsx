@@ -45,7 +45,7 @@ const Contact: React.FC<ContactProps> = ({ navPage, setNavPage }) => {
           }}
         />
       </Grid>
-      {/* <Map /> */}
+      <Map />
       <ContactForm />
     </Grid>
   );
