@@ -97,10 +97,11 @@ const About: React.FC<AboutProps> = ({ navPage, setNavPage }) => {
         >
           My Work
         </Typography>
-        <Grid container spacing={1}>
+        <Grid container spacing={1} alignItems="flex-start">
           {myWork.map((work, index) => (
             <Grid
               key={index}
+              height="160px"
               container
               border="1px solid var(--quaternary-color)"
               padding="16px"

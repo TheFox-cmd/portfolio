@@ -22,6 +22,24 @@ const steps = [
       "Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1",
   },
   {
+    label: "Step 1",
+    period: "2020 - 2021",
+    description:
+      "Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1",
+  },
+  {
+    label: "Step 1",
+    period: "2020 - 2021",
+    description:
+      "Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1",
+  },
+  {
+    label: "Step 1",
+    period: "2020 - 2021",
+    description:
+      "Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1",
+  },
+  {
     label: "Step 2",
     period: "2020 - 2021",
     description:
@@ -203,15 +221,18 @@ const Resume: React.FC<ResumeProps> = ({ navPage, setNavPage }) => {
             }}
             key={index}
           >
-            <Typography
-              variant="body1"
-              fontWeight="bold"
-              lineHeight="16px"
-              color="var(--quinary-color)"
-            >
-              {skill.name + " - " + skill.proficiency + "%"}
-            </Typography>
-            <Skills proficiency={skill.proficiency} />
+            <Grid> 
+              <Typography
+                variant="body1"
+                fontWeight="bold"
+                lineHeight="16px"
+                color="var(--quinary-color)"
+              >
+                {skill.name + " - " + skill.proficiency + "%"}
+              </Typography>
+              <Skills proficiency={skill.proficiency} />
+            </Grid>
+           
           </Grid>
         ))}
       </Grid>
