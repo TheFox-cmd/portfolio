@@ -1,8 +1,6 @@
 import { GoogleMap, LoadScript, Polygon } from "@react-google-maps/api";
 import locationBoundary from "../data/boundary.json";
 
-const googleMapsApiKey = import.meta.env.VITE_GOOGLE_MAP_API_KEY;
-
 const mapStyles = [
   {
     elementType: "geometry",
@@ -44,7 +42,7 @@ const myLocation = {
 
 const Map = () => {
   return (
-    <LoadScript googleMapsApiKey={googleMapsApiKey}>
+    <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAP_API_KEY}>
       <GoogleMap
         mapContainerStyle={{
           height: "35vh",
