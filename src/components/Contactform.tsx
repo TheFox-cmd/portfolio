@@ -30,7 +30,7 @@ const MyTextField: React.FC<MyTextFieldProps> = ({
       error={meta.touched && !!meta.error}
       helperText={meta.error}
       multiline={multiline}
-      rows={multiline ? 4 : undefined}
+      rows={multiline ? 3 : undefined}
       variant="outlined"
       sx={{
         width,
@@ -54,6 +54,9 @@ const MyTextField: React.FC<MyTextFieldProps> = ({
         },
         "& .MuiInputLabel-root.Mui-focused": {
           color: "var(--quinary-color)",
+        },
+        "& .MuiInputBase-inputMultiline": {
+          color: "var(--quinary-color)", 
         },
         "& .MuiInput-underline": {
           borderBottom: "none",
