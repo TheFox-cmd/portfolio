@@ -6,9 +6,12 @@ import About from "./About";
 import Resume from "./Resume";
 import Projects from "./Projects";
 import Contact from "./Contact";
+// const Contact = () => import("./Contact");
+
 
 const Home = () => {
   const [navPage, setNavPage] = useState<Nav>("About");
+
 
   const pages = {
     About: <About navPage={navPage} setNavPage={setNavPage} />,
