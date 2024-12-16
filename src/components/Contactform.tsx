@@ -27,8 +27,8 @@ const MyTextField: React.FC<MyTextFieldProps> = ({
     <TextField
       label={label}
       {...field}
-      error={meta.touched && !!meta.error}
-      helperText={meta.error}
+      error={meta.touched && Boolean(meta.error)}
+      helperText={meta.touched ? meta.error : ""}
       multiline={multiline}
       rows={multiline ? 3 : undefined}
       variant="outlined"
