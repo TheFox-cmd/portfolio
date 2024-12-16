@@ -188,7 +188,6 @@ const Resume: React.FC<ResumeProps> = ({ navPage, setNavPage }) => {
           <Grid
             container
             direction="column"
-            gap="12px"
             sx={{
               padding: "16px",
               backgroundColor: "var(--tertiary-color)",
@@ -203,6 +202,7 @@ const Resume: React.FC<ResumeProps> = ({ navPage, setNavPage }) => {
                 fontWeight="bold"
                 lineHeight="16px"
                 color="var(--quinary-color)"
+                marginBottom="6px"
               >
                 {skill.name + " - " + skill.proficiency + "%"}
               </Typography>
