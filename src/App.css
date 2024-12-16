@@ -1,8 +1,14 @@
 :root {
-  --primary-color: #0C0C0C;
-  --secondary-color: #1C1C1C;
+  --primary-color: #0c0c0c;
+  --secondary-color: #1c1c1c;
   --tertiary-color: #333333;
-  --quaternary-color: #4A4A4A;
-  --quinary-color: #F0F0F0;
-  --contrast-color: #FFD700;
+  --quaternary-color: #4a4a4a;
+  --quinary-color: #f0f0f0;
+  --contrast-color: #ffd700;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
 }
