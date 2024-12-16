@@ -103,6 +103,7 @@ const About: React.FC<AboutProps> = ({ navPage, setNavPage }) => {
               key={index}
               height="160px"
               container
+              direction="column"
               border="1px solid var(--quaternary-color)"
               padding="16px"
               borderRadius="12px"
