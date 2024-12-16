@@ -19,13 +19,18 @@ function App() {
   }, []);
 
   console.log(path);
+  // TODO: 
+  // 1. Navigation map 
+  // 2. Router
 
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/contacts" element={<Contact />} /> */}
-        {/* <Route path="*" element={<NotFound />} />  */}
+        <Route path="/about" element={<Home />} />
+        <Route path="/resume" element={<Home />} />
+        <Route path="/projects" element={<Home />} />
+        <Route path="/contact" element={<Home />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>

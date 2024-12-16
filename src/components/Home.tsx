@@ -6,12 +6,9 @@ import About from "./About";
 import Resume from "./Resume";
 import Projects from "./Projects";
 import Contact from "./Contact";
-// const Contact = () => import("./Contact");
-
 
 const Home = () => {
   const [navPage, setNavPage] = useState<Nav>("About");
-
 
   const pages = {
     About: <About navPage={navPage} setNavPage={setNavPage} />,
@@ -40,17 +37,3 @@ const Home = () => {
 };
 
 export default Home;
-
-{
-  /* <Grid container marginBottom="16px" justifyContent="flex-end">
-  <Button
-    component={Link}
-    to="/contacts"
-    variant="contained"
-    endIcon={<InboxIcon />}
-    sx={{ bgcolor: "#0A2E5C" }}
-  >
-    Contact Me
-  </Button>
-</Grid>; */
-}
