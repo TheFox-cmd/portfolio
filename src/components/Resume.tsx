@@ -16,40 +16,16 @@ interface ResumeProps {
 
 const steps = [
   {
-    label: "Step 1",
-    period: "2020 - 2021",
+    label: "Hirebeat. Inc",
+    period: "June 2022 - Aug 2022",
     description:
-      "Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1",
+      "As a Full Stack Developer in Hirebeat, I implemented an automated offer letter generation system for over 70 candidates who passed the interview process, significantly reducing manual data entry time by 300%. Using the Django framework, I developed RESTful APIs to streamline the process and generate signed URLs for the candidates to securely retrieve their offer letters as single unique links. It is integrated with AWS S3 service to generate and manage signed URLs with an automatic destruction feature, optimizing storage space and reducing operational costs.",
   },
   {
-    label: "Step 1",
-    period: "2020 - 2021",
+    label: "Yizhuang Holdings",
+    period: "Jan 2020 - Mar 2021",
     description:
-      "Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1",
-  },
-  {
-    label: "Step 1",
-    period: "2020 - 2021",
-    description:
-      "Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1",
-  },
-  {
-    label: "Step 1",
-    period: "2020 - 2021",
-    description:
-      "Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1Description for step 1",
-  },
-  {
-    label: "Step 2",
-    period: "2020 - 2021",
-    description:
-      "Description for step 2Description for step 2Description for step 2Description for step 2Description for step 2Description for step 2Description for step 2",
-  },
-  {
-    label: "Step 3",
-    period: "2020 - 2021",
-    description:
-      "Description for step 2Description for step 2Description for step 2Description for step 2Description for step 2Description for step 2Description for step 2",
+      "As a Full Stack Developer in Yizhuang Holdings, I developed a Java Spring Boot scheduler to process over 1,000 real-time cryptocurrency data updates daily from Binance. On the frontend, I utilized React JavaScript to implement an internal interface for the data analyst team. Additionally, I conducted iterative testing to refine reinforcement learning algorithms, and unit testing for interface components.",
   },
 ];
 
@@ -221,7 +197,7 @@ const Resume: React.FC<ResumeProps> = ({ navPage, setNavPage }) => {
             }}
             key={index}
           >
-            <Grid> 
+            <Grid>
               <Typography
                 variant="body1"
                 fontWeight="bold"
@@ -232,7 +208,6 @@ const Resume: React.FC<ResumeProps> = ({ navPage, setNavPage }) => {
               </Typography>
               <Skills proficiency={skill.proficiency} />
             </Grid>
-           
           </Grid>
         ))}
       </Grid>

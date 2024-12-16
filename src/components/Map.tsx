@@ -42,7 +42,11 @@ const myLocation = {
 
 const Map = () => {
   return (
-    <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAP_API_KEY}>
+    <LoadScript
+      googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAP_API_KEY}
+      language="en"
+      preventGoogleFontsLoading={true}
+    >
       <GoogleMap
         mapContainerStyle={{
           height: "35vh",

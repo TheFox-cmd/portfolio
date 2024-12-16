@@ -8,7 +8,6 @@ import Projects from "./Projects";
 import Contact from "./Contact";
 
 const Home = () => {
-  // !. Map 
   const [navPage, setNavPage] = useState<Nav>("About");
 
   const pages = {
