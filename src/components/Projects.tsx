@@ -10,7 +10,6 @@ import omnifood from "../assets/omnifood.jpg";
 import tmdb_logo from "../assets/tmdb.jpg";
 import { Box } from "@mui/material";
 import MUILink from "@mui/material/Link";
-import { Nav, ReactSetState } from "../types/Utils";
 import Navigation from "./Navigation";
 
 const projects = [
@@ -36,12 +35,7 @@ const projects = [
   },
 ];
 
-interface ProjectsProps {
-  navPage: Nav;
-  setNavPage: ReactSetState<Nav>;
-}
-
-const Projects: React.FC<ProjectsProps> = ({ navPage, setNavPage }) => {
+const Projects: React.FC = () => {
   return (
     <Grid
       container
@@ -59,7 +53,7 @@ const Projects: React.FC<ProjectsProps> = ({ navPage, setNavPage }) => {
       }}
       position="relative"
     >
-      <Navigation navPage={navPage} setNavPage={setNavPage} />
+      <Navigation />
       <Grid container direction="column" gap="16px">
         <Typography
           variant="h5"

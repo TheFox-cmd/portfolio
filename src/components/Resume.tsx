@@ -1,6 +1,5 @@
 import Grid from "@mui/material/Grid2";
 import Typography from "@mui/material/Typography";
-import { Nav, ReactSetState } from "../types/Utils";
 import Navigation from "./Navigation";
 import TerminalOutlinedIcon from "@mui/icons-material/TerminalOutlined";
 import Stepper from "@mui/material/Stepper";
@@ -8,11 +7,6 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import StepContent from "@mui/material/StepContent";
 import Skills from "./Skills";
-
-interface ResumeProps {
-  navPage: Nav;
-  setNavPage: ReactSetState<Nav>;
-}
 
 const steps = [
   {
@@ -48,7 +42,7 @@ const mySkills = [
   },
 ];
 
-const Resume: React.FC<ResumeProps> = ({ navPage, setNavPage }) => {
+const Resume: React.FC = () => {
   return (
     <Grid
       container
@@ -66,7 +60,7 @@ const Resume: React.FC<ResumeProps> = ({ navPage, setNavPage }) => {
       }}
       position="relative"
     >
-      <Navigation navPage={navPage} setNavPage={setNavPage} />
+      <Navigation />
       <Grid container direction="column" gap="16px">
         <Typography
           variant="h5"

@@ -5,12 +5,6 @@ import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 import SportsEsportsOutlinedIcon from "@mui/icons-material/SportsEsportsOutlined";
 import LinkedCameraOutlinedIcon from "@mui/icons-material/LinkedCameraOutlined";
 import Navigation from "./Navigation";
-import { ReactSetState, Nav } from "../types/Utils";
-
-interface AboutProps {
-  navPage: Nav;
-  setNavPage: ReactSetState<Nav>;
-}
 
 const myWork = [
   {
@@ -39,7 +33,7 @@ const myWork = [
   },
 ];
 
-const About: React.FC<AboutProps> = ({ navPage, setNavPage }) => {
+const About: React.FC = () => {
   return (
     <Grid
       container
@@ -57,7 +51,7 @@ const About: React.FC<AboutProps> = ({ navPage, setNavPage }) => {
       }}
       position="relative"
     >
-      <Navigation navPage={navPage} setNavPage={setNavPage} />
+      <Navigation />
       <Grid container direction="column" gap="16px">
         <Typography
           variant="h5"

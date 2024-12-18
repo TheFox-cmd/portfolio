@@ -1,16 +1,10 @@
 import ContactForm from "./Contactform";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid2";
-import { Nav, ReactSetState } from "../types/Utils";
 import Navigation from "./Navigation";
 import Map from "./Map";
 
-interface ContactProps {
-  navPage: Nav;
-  setNavPage: ReactSetState<Nav>;
-}
-
-const Contact: React.FC<ContactProps> = ({ navPage, setNavPage }) => {
+const Contact: React.FC = () => {
   return (
     <Grid
       container
@@ -28,7 +22,7 @@ const Contact: React.FC<ContactProps> = ({ navPage, setNavPage }) => {
       }}
       position="relative"
     >
-      <Navigation navPage={navPage} setNavPage={setNavPage} />
+      <Navigation />
       <Grid container direction="column" gap="16px">
         <Typography
           variant="h5"
