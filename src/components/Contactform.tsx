@@ -56,7 +56,7 @@ const MyTextField: React.FC<MyTextFieldProps> = ({
           color: "var(--quinary-color)",
         },
         "& .MuiInputBase-inputMultiline": {
-          color: "var(--quinary-color)", 
+          color: "var(--quinary-color)",
         },
         "& .MuiInput-underline": {
           borderBottom: "none",
@@ -66,37 +66,40 @@ const MyTextField: React.FC<MyTextFieldProps> = ({
   );
 };
 
-const ContactForm = () => {
-  const handleEmail = ({
-    clientName,
-    clientEmail,
-    clientProject,
-  }: ClientInfo) => {
-    const mailTemplate = {
-      from_name: clientName,
-      message: clientProject,
-      reply_to: clientEmail,
-    };
+const handleEmail = ({
+  clientName,
+  clientEmail,
+  clientProject,
+}: ClientInfo) => {
 
-    emailjs
-      .send(
-        import.meta.env.VITE_EMAILJS_SERVICEID as string,
-        import.meta.env.VITE_EMAILJS_TEMPLATEID as string,
-        mailTemplate,
-        import.meta.env.VITE_EMAILJS_PUBLICKEY as string
-      )
-      .then(
-        (response) => {
-          alert("Email sent successfully");
-          console.log("SUCCESS!", response.status, response.text);
-        },
-        (error) => {
-          alert("Email failed to send");
-          console.log("FAILED...", error);
-        }
-      );
+  const message = `Name: ${clientName}\nEmail: ${clientEmail}\nMessage: ${clientProject}`;
+
+  const mailTemplate = {
+    from_name: clientName,
+    message: message,
+    reply_to: clientEmail,
   };
 
+  emailjs
+    .send(
+      import.meta.env.VITE_EMAILJS_SERVICEID as string,
+      import.meta.env.VITE_EMAILJS_TEMPLATEID as string,
+      mailTemplate,
+      import.meta.env.VITE_EMAILJS_PUBLICKEY as string
+    )
+    .then(
+      (response) => {
+        alert("Email sent successfully");
+        console.log("SUCCESS!", response.status, response.text);
+      },
+      (error) => {
+        alert("Email failed to send");
+        console.log("FAILED...", error);
+      }
+    );
+};
+
+const ContactForm = () => {
   return (
     <>
       <Formik
