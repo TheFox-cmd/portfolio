@@ -6,12 +6,13 @@ const Home = () => {
   return (
     <Grid
       container
-      width="100%"
+      // width="100%"
       minHeight="100vh"
       height="fit-content"
       gap="16px"
       padding="36px"
       justifyContent="center"
+      wrap="nowrap"
       sx={{
         background: "var(--primary-color)",
       }}

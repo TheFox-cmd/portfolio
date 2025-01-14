@@ -2,7 +2,6 @@ import foxImage from "../assets/fox.jpg";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import MUILink from "@mui/material/Link";
 import Grid from "@mui/material/Grid2";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
@@ -11,6 +10,52 @@ import Typography from "@mui/material/Typography";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PhoneIphoneOutlinedIcon from "@mui/icons-material/PhoneIphoneOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
+import IconButton from "@mui/material/IconButton";
+
+const contactInfo = [
+  {
+    icon: (
+      <EmailOutlinedIcon
+        sx={{ fontSize: "24px", color: "var(--contrast-color)" }}
+      />
+    ),
+    title: "Email",
+    description: "rkoda997@gmail.com",
+  },
+  {
+    icon: (
+      <PhoneIphoneOutlinedIcon
+        sx={{ fontSize: "24px", color: "var(--contrast-color)" }}
+      />
+    ),
+    title: "Phone",
+    description: "(510) 612-6878",
+  },
+  {
+    icon: (
+      <LocationOnOutlinedIcon
+        sx={{ fontSize: "24px", color: "var(--contrast-color)" }}
+      />
+    ),
+    title: "Location",
+    description: "WI, USA",
+  },
+];
+
+const socialInfo = [
+  {
+    icon: <InstagramIcon />,
+    href: "https://www.instagram.com/a.random.fox/",
+  },
+  {
+    icon: <GitHubIcon />,
+    href: "https://github.com/TheFox-cmd",
+  },
+  {
+    icon: <LinkedInIcon />,
+    href: "https://www.linkedin.com/in/ryuki-koda-b812731b6/",
+  },
+];
 
 const Profile = () => {
   return (
@@ -19,7 +64,7 @@ const Profile = () => {
       direction="column"
       alignItems="center"
       marginTop="70px"
-      padding="36px 16px"
+      padding="36px 12px"
       gap="16px"
       width="288px"
       height="fit-content"
@@ -87,182 +132,79 @@ const Profile = () => {
         lineHeight="48px"
         justifyContent="left"
         alignItems="center"
+        gap={1}
       >
+        {contactInfo.map((contact, index) => (
+          <Grid
+            container
+            color="var(--quinary-color)"
+            lineHeight="48px"
+            justifyContent="left"
+            alignItems="center"
+            key={index}
+          >
+            {/* icon  */}
+            <Grid
+              sx={{
+                border: "1px solid var(--tertiary-color)",
+                padding: "20px",
+                width: "24px",
+                height: "24px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: "12px",
+                marginRight: "12px",
+              }}
+            >
+              {contact.icon}
+            </Grid>
+            {/* title and description */}
+            <Grid container direction="column">
+              <Typography
+                sx={{
+                  fontSize: "16px",
+                  fontWeight: "bold",
+                  color: "var(--quinary-color)",
+                  marginBottom: "4px",
+                }}
+              >
+                {contact.title}
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "14px",
+                  fontWeight: "normal",
+                  color: "var(--quinary-color)",
+                }}
+              >
+                {contact.description}
+              </Typography>
+            </Grid>
+          </Grid>
+        ))}
         <Grid
-          sx={{
-            border: "1px solid var(--tertiary-color)",
-            padding: "20px",
-            width: "24px",
-            height: "24px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            borderRadius: "12px",
-            marginRight: "12px",
-          }}
+          container
+          width="100%"
+          alignItems="center"
+          justifyContent="space-evenly"
         >
-          <EmailOutlinedIcon
-            sx={{
-              fontSize: "24px",
-              color: "var(--contrast-color)",
-            }}
-          />
-        </Grid>
-        <Grid container direction="column">
-          <Typography
-            sx={{
-              fontSize: "16px",
-              fontWeight: "bold",
-              color: "var(--quinary-color)",
-              marginBottom: "4px",
-            }}
-          >
-            Email:
-          </Typography>
-          <Typography
-            sx={{
-              fontSize: "14px",
-              fontWeight: "normal",
-              color: "var(--quinary-color)",
-            }}
-          >
-            rkoda997@gmail.com
-          </Typography>
-        </Grid>
-      </Grid>
-      <Grid
-        container
-        width="80%"
-        color="var(--quinary-color)"
-        lineHeight="48px"
-        justifyContent="left"
-        alignItems="center"
-      >
-        <Grid
-          sx={{
-            border: "1px solid var(--tertiary-color)",
-            padding: "20px",
-            width: "24px",
-            height: "24px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            borderRadius: "12px",
-            marginRight: "12px",
-          }}
-        >
-          <PhoneIphoneOutlinedIcon
-            sx={{
-              fontSize: "24px",
-              color: "var(--contrast-color)",
-            }}
-          />
-        </Grid>
-        <Grid container direction="column">
-          <Typography
-            sx={{
-              fontSize: "16px",
-              fontWeight: "bold",
-              color: "var(--quinary-color)",
-              marginBottom: "4px",
-            }}
-          >
-            Phone:
-          </Typography>
-          <Typography
-            sx={{
-              fontSize: "14px",
-              fontWeight: "normal",
-              color: "var(--quinary-color)",
-            }}
-          >
-            (510) 612-6878
-          </Typography>
-        </Grid>
-      </Grid>
-      <Grid
-        container
-        width="80%"
-        color="var(--quinary-color)"
-        lineHeight="48px"
-        justifyContent="left"
-        alignItems="center"
-      >
-        <Grid
-          sx={{
-            border: "1px solid var(--tertiary-color)",
-            padding: "20px",
-            width: "24px",
-            height: "24px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            borderRadius: "12px",
-            marginRight: "12px",
-          }}
-        >
-          <LocationOnOutlinedIcon
-            sx={{
-              fontSize: "24px",
-              color: "var(--contrast-color)",
-            }}
-          />
-        </Grid>
-        <Grid container direction="column">
-          <Typography
-            sx={{
-              fontSize: "16px",
-              fontWeight: "bold",
-              color: "var(--quinary-color)",
-              marginBottom: "4px",
-            }}
-          >
-            Location:
-          </Typography>
-          <Typography
-            sx={{
-              fontSize: "14px",
-              fontWeight: "normal",
-              color: "var(--quinary-color)",
-            }}
-          >
-            WI, USA
-          </Typography>
-        </Grid>
-        <Grid container width="100%" textAlign="center">
-          <Grid size={4}>
-            <MUILink
-              href="https://www.instagram.com/a.random.fox/"
+          {socialInfo.map((social, index) => (
+            <IconButton
+              href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              underline="none"
-              color="white"
+              color="inherit"
+              key={index}
+              sx={{
+                ":hover": {
+                  color: "var(--contrast-color)",
+                },
+              }}
             >
-              <InstagramIcon />
-            </MUILink>
-          </Grid>
-          <Grid size={4}>
-            <MUILink
-              href="https://github.com/TheFox-cmd"
-              target="_blank"
-              rel="noopener noreferrer"
-              underline="none"
-              color="white"
-            >
-              <GitHubIcon />
-            </MUILink>
-          </Grid>
-          <Grid size={4}>
-            <MUILink
-              href="https://www.linkedin.com/in/ryuki-koda-b812731b6/"
-              target="_blank"
-              rel="noopener noreferrer"
-              underline="none"
-              color="white"
-            >
-              <LinkedInIcon />
-            </MUILink>
-          </Grid>
+              {social.icon}
+            </IconButton>
+          ))}
         </Grid>
       </Grid>
     </Grid>

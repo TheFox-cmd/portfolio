@@ -97,7 +97,7 @@ const About: React.FC = () => {
             <Grid
               size={6}
               key={index}
-              height="160px"
+              minHeight="160px"
               border="1px solid var(--quaternary-color)"
               padding="16px"
               borderRadius="12px"
