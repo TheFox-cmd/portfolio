@@ -74,6 +74,7 @@ const Resume: React.FC = () => {
           style={{
             width: "60px",
             border: "3px solid var(--contrast-color)",
+            marginLeft: 0,
           }}
         />
       </Grid>

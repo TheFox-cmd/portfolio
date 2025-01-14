@@ -56,7 +56,7 @@ const Navigation: React.FC = () => {
               bottom: 0,
               left: "50%",
               width: "0%",
-              height: "2px",
+              height: "3px",
               backgroundColor:
                 location.pathname === page.path
                   ? "var(--tertiary-color)"

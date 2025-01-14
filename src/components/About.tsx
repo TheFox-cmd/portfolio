@@ -65,6 +65,7 @@ const About: React.FC = () => {
           style={{
             width: "60px",
             border: "3px solid var(--contrast-color)",
+            marginLeft: 0,
           }}
         />
         <Typography variant="body1" lineHeight="24px" color="white">
@@ -94,37 +95,33 @@ const About: React.FC = () => {
         <Grid container spacing={1} alignItems="flex-start">
           {myWork.map((work, index) => (
             <Grid
+              size={6}
               key={index}
               height="160px"
-              container
-              direction="column"
               border="1px solid var(--quaternary-color)"
               padding="16px"
               borderRadius="12px"
-              size={6}
               sx={{ backgroundColor: "var(--tertiary-color)" }}
             >
               <Grid>{work.icon}</Grid>
-              <Grid container direction="column" gap="4px">
-                <Typography
-                  sx={{
-                    fontSize: "16px",
-                    fontWeight: "bold",
-                    color: "var(--quinary-color)",
-                  }}
-                >
-                  {work.title}
-                </Typography>
-                <Typography
-                  sx={{
-                    fontSize: "14px",
-                    fontWeight: "normal",
-                    color: "var(--quinary-color)",
-                  }}
-                >
-                  {work.description}
-                </Typography>
-              </Grid>
+              <Typography
+                sx={{
+                  fontSize: "16px",
+                  fontWeight: "bold",
+                  color: "var(--quinary-color)",
+                }}
+              >
+                {work.title}
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "14px",
+                  fontWeight: "normal",
+                  color: "var(--quinary-color)",
+                }}
+              >
+                {work.description}
+              </Typography>
             </Grid>
           ))}
         </Grid>
