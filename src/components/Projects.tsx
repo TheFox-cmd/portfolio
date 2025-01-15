@@ -11,6 +11,8 @@ import tmdb_logo from "../assets/tmdb.jpg";
 import { Box } from "@mui/material";
 import MUILink from "@mui/material/Link";
 import Navigation from "./Navigation";
+import { useContext } from "react";
+import DeviceContext from "../contexts/DeviceContext";
 
 const projects = [
   {
@@ -36,16 +38,17 @@ const projects = [
 ];
 
 const Projects: React.FC = () => {
+  const isMobile = useContext(DeviceContext);
   return (
     <Grid
       container
       direction="column"
-      marginTop="70px"
+      marginTop={!isMobile ? "70px" : "0"}
       padding="36px 16px"
       gap="16px"
-      width="1024px"
+      width={!isMobile ? "1024px" : "100%"}
       height="fit-content"
-      borderRadius="12px"
+      borderRadius={!isMobile ? "12px" : "0"}
       sx={{
         background: "var(--secondary-color)",
         border: "2px solid var(--tertiary-color)",

@@ -5,6 +5,8 @@ import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 import SportsEsportsOutlinedIcon from "@mui/icons-material/SportsEsportsOutlined";
 import LinkedCameraOutlinedIcon from "@mui/icons-material/LinkedCameraOutlined";
 import Navigation from "./Navigation";
+import { useContext } from "react";
+import DeviceContext from "../contexts/DeviceContext";
 
 const myWork = [
   {
@@ -34,16 +36,18 @@ const myWork = [
 ];
 
 const About: React.FC = () => {
+  const isMobile = useContext(DeviceContext);
+
   return (
     <Grid
       container
       direction="column"
-      marginTop="70px"
+      marginTop={!isMobile ? "70px" : "0"}
       padding="36px 16px"
       gap="16px"
-      width="1024px"
+      width={!isMobile ? "1024px" : "100%"}
       height="fit-content"
-      borderRadius="12px"
+      borderRadius={!isMobile ? "12px" : "0"}
       sx={{
         background: "var(--secondary-color)",
         border: "2px solid var(--tertiary-color)",

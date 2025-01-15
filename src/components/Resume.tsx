@@ -7,6 +7,8 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import StepContent from "@mui/material/StepContent";
 import Skills from "./Skills";
+import { useContext } from "react";
+import DeviceContext from "../contexts/DeviceContext";
 
 const steps = [
   {
@@ -43,16 +45,17 @@ const mySkills = [
 ];
 
 const Resume: React.FC = () => {
+  const isMobile = useContext(DeviceContext);
   return (
     <Grid
       container
       direction="column"
-      marginTop="70px"
+      marginTop={!isMobile ? "70px" : "0"}
       padding="36px 16px"
       gap="16px"
-      width="1024px"
+      width={!isMobile ? "1024px" : "100%"}
       height="fit-content"
-      borderRadius="12px"
+      borderRadius={!isMobile ? "12px" : "0"}
       sx={{
         background: "var(--secondary-color)",
         border: "2px solid var(--tertiary-color)",

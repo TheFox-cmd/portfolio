@@ -6,7 +6,6 @@ const Home = () => {
   return (
     <Grid
       container
-      // width="100%"
       minHeight="100vh"
       height="fit-content"
       gap="16px"

@@ -11,6 +11,8 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PhoneIphoneOutlinedIcon from "@mui/icons-material/PhoneIphoneOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import IconButton from "@mui/material/IconButton";
+import { useContext } from "react";
+import DeviceContext from "../contexts/DeviceContext";
 
 const contactInfo = [
   {
@@ -58,17 +60,19 @@ const socialInfo = [
 ];
 
 const Profile = () => {
+  const isMobile = useContext(DeviceContext);
+
   return (
     <Grid
       container
       direction="column"
       alignItems="center"
-      marginTop="70px"
+      marginTop={!isMobile ? "70px" : "0"}
       padding="36px 12px"
       gap="16px"
-      width="288px"
+      width={!isMobile ? "288px" : "100%"}
       height="fit-content"
-      borderRadius="12px"
+      borderRadius={!isMobile ? "12px" : "0"}
       sx={{
         background: "var(--secondary-color)",
         border: "2px solid var(--tertiary-color)",
