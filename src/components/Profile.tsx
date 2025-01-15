@@ -3,9 +3,6 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Grid from "@mui/material/Grid2";
-import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
-import CardActionArea from "@mui/material/CardActionArea";
 import Typography from "@mui/material/Typography";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PhoneIphoneOutlinedIcon from "@mui/icons-material/PhoneIphoneOutlined";
@@ -68,33 +65,33 @@ const Profile = () => {
       direction="column"
       alignItems="center"
       marginTop={!isMobile ? "70px" : "0"}
-      padding="36px 12px"
+      padding={!isMobile ? "36px 12px" : "0px 16px"}
       gap="16px"
       width={!isMobile ? "288px" : "100%"}
       height="fit-content"
       borderRadius={!isMobile ? "12px" : "0"}
+      border={!isMobile ? "2px solid var(--tertiary-color)" : "none"}
       sx={{
         background: "var(--secondary-color)",
-        border: "2px solid var(--tertiary-color)",
-        boxSizing: "border-box",
       }}
     >
-      <Grid width="100%" padding="0 24px">
-        <Card
-          sx={{
+      <Grid
+        width="100%"
+        padding="0 24px"
+        container
+        justifyContent="center"
+        alignItems="center"
+        sx={{ backgroundColor: "var(--secondary-color)" }}
+      >
+        <img
+          src={foxImage}
+          alt="Profile Picture"
+          style={{
             filter: "invert(1)",
-            backgroundColor: "var(--quinary-color)",
-            border: "none",
+            width: "200px",
+            height: "auto",
           }}
-        >
-          <CardActionArea>
-            <CardMedia
-              sx={{ width: 200, height: 200, border: "none" }}
-              image={foxImage}
-              title="fox image"
-            />
-          </CardActionArea>
-        </Card>
+        />
       </Grid>
       <Grid width="100%">
         <Typography

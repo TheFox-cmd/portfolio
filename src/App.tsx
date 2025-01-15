@@ -15,6 +15,24 @@ import Profile from "./components/Profile";
 import DeviceContext from "./contexts/DeviceContext";
 import Grid from "@mui/material/Grid2";
 
+const pages = [
+  {
+    component: <Profile />,
+  },
+  {
+    component: <About />,
+  },
+  {
+    component: <Resume />,
+  },
+  {
+    component: <Projects />,
+  },
+  {
+    component: <Contact />,
+  },
+];
+
 function App() {
   const [, setPath] = useState(window.location.pathname);
 
@@ -36,11 +54,22 @@ function App() {
       <Router>
         {isMobile ? (
           <Grid container direction="column" width="100vw">
-            <Profile />
-            <About />
-            <Resume />
-            <Projects />
-            <Contact />
+            {pages.map((page, index) => (
+              <Grid
+                key={index}
+                sx={{
+                  backgroundColor: "var(--secondary-color)",
+                }}
+              >
+                {page.component}
+                <hr
+                  style={{
+                    width: "90%",
+                    border: "1px solid var(--tertiary-color)",
+                  }}
+                />
+              </Grid>
+            ))}
           </Grid>
         ) : (
           <Routes>

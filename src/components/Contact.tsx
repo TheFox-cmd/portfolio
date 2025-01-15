@@ -14,15 +14,14 @@ const Contact: React.FC = () => {
       container
       direction="column"
       marginTop={!isMobile ? "70px" : "0"}
-      padding="36px 16px"
+      padding={!isMobile ? "36px 12px" : "12px 16px"}
       gap="16px"
       width={!isMobile ? "1024px" : "100%"}
       height="fit-content"
       borderRadius={!isMobile ? "12px" : "0"}
+      border={!isMobile ? "2px solid var(--tertiary-color)" : "none"}
       sx={{
         background: "var(--secondary-color)",
-        border: "2px solid var(--tertiary-color)",
-        boxSizing: "border-box",
       }}
       position="relative"
     >
