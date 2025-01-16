@@ -98,7 +98,7 @@ const About: React.FC = () => {
         <Grid container spacing={1} alignItems="flex-start">
           {myWork.map((work, index) => (
             <Grid
-              size={6}
+              size={!isMobile ? 6 : 12}
               key={index}
               minHeight="160px"
               border="1px solid var(--quaternary-color)"

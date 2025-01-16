@@ -74,10 +74,10 @@ const Projects: React.FC = () => {
         />
         <Grid container spacing={2}>
           {projects.map((project, index) => (
-            <Grid size={4} key={index}>
+            <Grid size={!isMobile ? 4 : 12} key={index} container justifyContent="center">
               <Card
                 sx={{
-                  maxWidth: 345,
+                  minWidth: 325,
                   color: "var(--quinary-color)",
                   bgcolor: "var(--secondary-color)",
                   border: "2px solid var(--tertiary-color)",
@@ -103,7 +103,7 @@ const Projects: React.FC = () => {
                     <CardMedia
                       sx={{ height: 70 }}
                       image={project.image}
-                      title="GTFO Background"
+                      title={project.title}
                     />
                     <CardContent
                       sx={{ height: 40, padding: "12px", lineHeight: 1 }}

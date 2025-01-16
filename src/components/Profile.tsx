@@ -128,19 +128,19 @@ const Profile = () => {
       </Grid>
       <Grid
         container
-        width="80%"
-        color="var(--quinary-color)"
-        lineHeight="48px"
-        justifyContent="left"
         alignItems="center"
-        gap={1}
+        // justifyContent="space-between"
+        justifyContent="center"
+        color="var(--quinary-color)"
+        direction="column"
       >
         {contactInfo.map((contact, index) => (
           <Grid
             container
+            width="100%"
             color="var(--quinary-color)"
             lineHeight="48px"
-            justifyContent="left"
+            justifyContent="flex-start"
             alignItems="center"
             key={index}
           >
@@ -184,29 +184,30 @@ const Profile = () => {
             </Grid>
           </Grid>
         ))}
-        <Grid
-          container
-          width="100%"
-          alignItems="center"
-          justifyContent="space-evenly"
-        >
-          {socialInfo.map((social, index) => (
-            <IconButton
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              color="inherit"
-              key={index}
-              sx={{
-                ":hover": {
-                  color: "var(--contrast-color)",
-                },
-              }}
-            >
-              {social.icon}
-            </IconButton>
-          ))}
-        </Grid>
+      </Grid>
+      <Grid
+        container
+        width="60%"
+        alignItems="center"
+        justifyContent="space-between"
+        color="var(--quinary-color)"
+      >
+        {socialInfo.map((social, index) => (
+          <IconButton
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            color="inherit"
+            key={index}
+            sx={{
+              ":hover": {
+                color: "var(--contrast-color)",
+              },
+            }}
+          >
+            {social.icon}
+          </IconButton>
+        ))}
       </Grid>
     </Grid>
   );

@@ -7,6 +7,8 @@ import * as Yup from "yup";
 import { Formik, Form, useField, FieldHookConfig } from "formik";
 import { TextField } from "@mui/material";
 import ClientSchema from "../schema/clientSchema";
+import { useContext } from "react";
+import DeviceContext from "../contexts/DeviceContext";
 
 type ClientInfo = Yup.InferType<typeof ClientSchema>;
 
@@ -71,7 +73,6 @@ const handleEmail = ({
   clientEmail,
   clientProject,
 }: ClientInfo) => {
-
   const message = `Name: ${clientName}\nEmail: ${clientEmail}\nMessage: ${clientProject}`;
 
   const mailTemplate = {
@@ -100,6 +101,8 @@ const handleEmail = ({
 };
 
 const ContactForm = () => {
+  const isMobile = useContext(DeviceContext);
+
   return (
     <>
       <Formik
@@ -118,10 +121,10 @@ const ContactForm = () => {
         {() => (
           <Form>
             <Grid container height="fit-content" spacing={2}>
-              <Grid size={6}>
+              <Grid size={!isMobile ? 6 : 12}>
                 <MyTextField label="Your Name" name="clientName" width="100%" />
               </Grid>
-              <Grid size={6}>
+              <Grid size={!isMobile ? 6 : 12}>
                 <MyTextField
                   label="Your Email"
                   name="clientEmail"

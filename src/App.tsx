@@ -34,6 +34,13 @@ const pages = [
 ];
 
 function App() {
+  // TODO: 
+  // * 1. Global Phone Padding when Portrait Mode
+  // * 2. Responsive window size
+  // * 3. Fix Project Width
+  // * 4. Add Background
+  // * 5. Fade in Text Animation
+
   const [, setPath] = useState(window.location.pathname);
 
   const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 768);
