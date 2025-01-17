@@ -131,6 +131,7 @@ const Profile = () => {
         justifyContent="center"
         color="var(--quinary-color)"
         direction="column"
+        gap={1}
       >
         {contactInfo.map((contact, index) => (
           <Grid
