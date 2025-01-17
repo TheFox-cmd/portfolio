@@ -57,10 +57,10 @@ const Resume: React.FC = () => {
       height="fit-content"
       borderRadius={!isMobile ? "12px" : "0"}
       border={!isMobile ? "2px solid var(--tertiary-color)" : "none"}
-      sx={{
-        background: "var(--secondary-color)",
-      }}
       position="relative"
+      sx={{
+        backgroundColor: !isMobile ? "var(--secondary-color)" : 0,
+      }}
     >
       <Navigation />
       <Grid container direction="column" gap="16px">

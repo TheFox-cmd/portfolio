@@ -1,6 +1,7 @@
 import Grid from "@mui/material/Grid2";
 import Profile from "./Profile";
 import { Outlet } from "react-router-dom";
+import backgroundImage from "../assets/background.png";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       wrap="nowrap"
       sx={{
         background: "var(--primary-color)",
+        backgroundImage: `url(${backgroundImage})`,
       }}
     >
       <Profile />

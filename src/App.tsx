@@ -14,6 +14,7 @@ import Contact from "./components/Contact";
 import Profile from "./components/Profile";
 import DeviceContext from "./contexts/DeviceContext";
 import Grid from "@mui/material/Grid2";
+import backgroundImage from "./assets/background.png";
 
 const pages = [
   {
@@ -34,16 +35,26 @@ const pages = [
 ];
 
 function App() {
-  // TODO: 
-  // * 1. Global Phone Padding when Portrait Mode
-  // * 2. Responsive window size
-  // * 3. Fix Project Width
-  // * 4. Add Background
+  // TODO:
   // * 5. Fade in Text Animation
+  // * 6. List Text instead of Block
+  // * 7. Page Progress Bar
 
   const [, setPath] = useState(window.location.pathname);
 
-  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 1080);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1080);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const handlePopState = () => {
@@ -60,23 +71,27 @@ function App() {
     <DeviceContext.Provider value={isMobile}>
       <Router>
         {isMobile ? (
-          <Grid container direction="column" width="100vw">
-            {pages.map((page, index) => (
-              <Grid
-                key={index}
-                sx={{
-                  backgroundColor: "var(--secondary-color)",
-                }}
-              >
-                {page.component}
-                <hr
-                  style={{
-                    width: "90%",
-                    border: "1px solid var(--tertiary-color)",
-                  }}
-                />
-              </Grid>
-            ))}
+          <Grid
+            container
+            justifyContent="center"
+            sx={{
+              backgroundImage: `url(${backgroundImage})`,
+              backgroundColor: "var(--primary-color)",
+            }}
+          >
+            <Grid container direction="column" maxWidth="526px">
+              {pages.map((page, index) => (
+                <Grid key={index}>
+                  {page.component}
+                  <hr
+                    style={{
+                      width: "90%",
+                      border: "1px solid var(--tertiary-color)",
+                    }}
+                  />
+                </Grid>
+              ))}
+            </Grid>
           </Grid>
         ) : (
           <Routes>

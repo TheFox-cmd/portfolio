@@ -72,7 +72,7 @@ const Profile = () => {
       borderRadius={!isMobile ? "12px" : "0"}
       border={!isMobile ? "2px solid var(--tertiary-color)" : "none"}
       sx={{
-        background: "var(--secondary-color)",
+        backgroundColor: !isMobile ? "var(--secondary-color)" : 0,
       }}
     >
       <Grid
@@ -81,7 +81,6 @@ const Profile = () => {
         container
         justifyContent="center"
         alignItems="center"
-        sx={{ backgroundColor: "var(--secondary-color)" }}
       >
         <img
           src={foxImage}
@@ -129,7 +128,6 @@ const Profile = () => {
       <Grid
         container
         alignItems="center"
-        // justifyContent="space-between"
         justifyContent="center"
         color="var(--quinary-color)"
         direction="column"
@@ -144,7 +142,6 @@ const Profile = () => {
             alignItems="center"
             key={index}
           >
-            {/* icon  */}
             <Grid
               sx={{
                 border: "1px solid var(--tertiary-color)",
@@ -160,7 +157,6 @@ const Profile = () => {
             >
               {contact.icon}
             </Grid>
-            {/* title and description */}
             <Grid container direction="column">
               <Typography
                 sx={{
@@ -187,7 +183,7 @@ const Profile = () => {
       </Grid>
       <Grid
         container
-        width="60%"
+        width="70%"
         alignItems="center"
         justifyContent="space-between"
         color="var(--quinary-color)"

@@ -50,10 +50,10 @@ const Projects: React.FC = () => {
       height="fit-content"
       borderRadius={!isMobile ? "12px" : "0"}
       border={!isMobile ? "2px solid var(--tertiary-color)" : "none"}
-      sx={{
-        background: "var(--secondary-color)",
-      }}
       position="relative"
+      sx={{
+        backgroundColor: !isMobile ? "var(--secondary-color)" : 0,
+      }}
     >
       <Navigation />
       <Grid container direction="column" gap="16px">
@@ -74,10 +74,15 @@ const Projects: React.FC = () => {
         />
         <Grid container spacing={2}>
           {projects.map((project, index) => (
-            <Grid size={!isMobile ? 4 : 12} key={index} container justifyContent="center">
+            <Grid
+              size={!isMobile ? 4 : 12}
+              key={index}
+              container
+              justifyContent="center"
+            >
               <Card
                 sx={{
-                  minWidth: 325,
+                  width: "100%",
                   color: "var(--quinary-color)",
                   bgcolor: "var(--secondary-color)",
                   border: "2px solid var(--tertiary-color)",
