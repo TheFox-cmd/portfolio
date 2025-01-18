@@ -5,6 +5,7 @@ import Navigation from "./Navigation";
 import Map from "./Map";
 import { useContext } from "react";
 import DeviceContext from "../contexts/DeviceContext";
+import { handleGlitchEffect } from "../utils/Effects";
 
 const Contact: React.FC = () => {
   const isMobile = useContext(DeviceContext);
@@ -32,6 +33,7 @@ const Contact: React.FC = () => {
           fontWeight="bold"
           lineHeight="24px"
           color="white"
+          onMouseEnter={handleGlitchEffect}
         >
           Contacts
         </Typography>

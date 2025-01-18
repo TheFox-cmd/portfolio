@@ -37,7 +37,6 @@ const pages = [
 function App() {
   // TODO:
   // * 5. Fade in Text Animation
-  // * 6. List Text instead of Block
   // * 7. Page Progress Bar
 
   const [, setPath] = useState(window.location.pathname);

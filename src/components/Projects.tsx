@@ -13,6 +13,7 @@ import MUILink from "@mui/material/Link";
 import Navigation from "./Navigation";
 import { useContext } from "react";
 import DeviceContext from "../contexts/DeviceContext";
+import { handleGlitchEffect } from "../utils/Effects";
 
 const projects = [
   {
@@ -62,7 +63,8 @@ const Projects: React.FC = () => {
           fontWeight="bold"
           lineHeight="24px"
           color="white"
-        >
+          onMouseEnter={handleGlitchEffect}
+          >
           Projects
         </Typography>
         <hr

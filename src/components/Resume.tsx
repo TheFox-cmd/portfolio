@@ -9,19 +9,28 @@ import StepContent from "@mui/material/StepContent";
 import Skills from "./Skills";
 import { useContext } from "react";
 import DeviceContext from "../contexts/DeviceContext";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import { handleGlitchEffect } from "../utils/Effects";
 
 const steps = [
   {
     label: "Hirebeat. Inc",
     period: "June 2022 - Aug 2022",
-    description:
-      "As a Full Stack Developer in Hirebeat, I implemented an automated offer letter generation system for over 70 candidates who passed the interview process, significantly reducing manual data entry time by 300%. Using the Django framework, I developed RESTful APIs to streamline the process and generate signed URLs for the candidates to securely retrieve their offer letters as single unique links. It is integrated with AWS S3 service to generate and manage signed URLs with an automatic destruction feature, optimizing storage space and reducing operational costs.",
+    description: [
+      "Implemented an automated offer letter generation over 70 candidates who passed the interview assessment, reducing manual data entry time by 300%.",
+      "Leveraged Django framework implements Restful API and lists out signed URLs for the distributed system, allowing users to retrieve their corresponding PDF as a single URL.",
+      "Utilized AWS S3 to generate unique signed URLs with a destruction feature, optimizing storage space and reducing costs.",
+    ],
   },
   {
     label: "Yizhuang Holdings",
     period: "Jan 2020 - Mar 2021",
-    description:
-      "As a Full Stack Developer in Yizhuang Holdings, I developed a Java Spring Boot scheduler to process over 1,000 real-time cryptocurrency data updates daily from Binance. On the frontend, I utilized React JavaScript to implement an internal interface for the data analyst team. Additionally, I conducted iterative testing to refine reinforcement learning algorithms, and unit testing for interface components.",
+    description: [
+      "Developed a Java Spring Boot scheduler that processed over 1,000 real-time cryptocurrency data updates daily from binance, ensuring timely and accurate data availability.",
+      "Developed the frontend of the Binance experience using React JavaScript, delivering a responsive and simple interface for the data analyst team.",
+      "Conducted iterative testing to refine algorithms for Reinforcement Learning, resulting in a 30% improvement in graph accuracy and user comprehension.",
+    ],
   },
 ];
 
@@ -69,6 +78,7 @@ const Resume: React.FC = () => {
           fontWeight="bold"
           lineHeight="24px"
           color="white"
+          onMouseEnter={handleGlitchEffect}
         >
           Resume
         </Typography>
@@ -106,6 +116,7 @@ const Resume: React.FC = () => {
             variant="h5"
             fontWeight="bold"
             color="var(--quinary-color)"
+            onMouseEnter={handleGlitchEffect}
           >
             Experience
           </Typography>
@@ -158,14 +169,20 @@ const Resume: React.FC = () => {
                 >
                   {step.period}
                 </Typography>
-                <Typography
-                  sx={{
-                    color: "var(--quinary-color)",
-                    fontWeight: "normal",
-                  }}
-                >
-                  {step.description}
-                </Typography>
+                {step.description.map((description, index) => (
+                  <List key={index}>
+                    <ListItem disablePadding>
+                      <Typography
+                        sx={{
+                          color: "var(--quinary-color)",
+                          fontWeight: "normal",
+                        }}
+                      >
+                        {description}
+                      </Typography>
+                    </ListItem>
+                  </List>
+                ))}
               </StepContent>
             </Step>
           ))}
@@ -178,6 +195,7 @@ const Resume: React.FC = () => {
           lineHeight="16px"
           color="var(--quinary-color)"
           marginBottom="12px"
+          onMouseEnter={handleGlitchEffect}
         >
           My Skills
         </Typography>

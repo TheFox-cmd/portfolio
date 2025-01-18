@@ -7,6 +7,7 @@ import LinkedCameraOutlinedIcon from "@mui/icons-material/LinkedCameraOutlined";
 import Navigation from "./Navigation";
 import { useContext } from "react";
 import DeviceContext from "../contexts/DeviceContext";
+import { handleGlitchEffect } from "../utils/Effects";
 
 const myWork = [
   {
@@ -61,6 +62,7 @@ const About: React.FC = () => {
           fontWeight="bold"
           lineHeight="24px"
           color="white"
+          onMouseEnter={handleGlitchEffect}
         >
           About Me
         </Typography>
@@ -92,6 +94,7 @@ const About: React.FC = () => {
           fontWeight="bold"
           lineHeight="24px"
           color="white"
+          onMouseEnter={handleGlitchEffect}
         >
           My Work
         </Typography>

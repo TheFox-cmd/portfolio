@@ -10,6 +10,7 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import IconButton from "@mui/material/IconButton";
 import { useContext } from "react";
 import DeviceContext from "../contexts/DeviceContext";
+import { handleGlitchEffect } from "../utils/Effects";
 
 const contactInfo = [
   {
@@ -99,9 +100,10 @@ const Profile = () => {
           lineHeight="48px"
           textAlign="center"
           color="white"
-          fontSize="36px"
+          fontSize="32px"
+          onMouseEnter={handleGlitchEffect}
         >
-          Ryuki Koda
+          RYUKI KODA
         </Typography>
       </Grid>
       <Grid

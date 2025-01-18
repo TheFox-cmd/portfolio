@@ -5,6 +5,7 @@
   --quaternary-color: #4a4a4a;
   --quinary-color: #f0f0f0;
   --contrast-color: #ffd700;
+  font-family: "Space Mono", monospace;
 }
 
 html {
