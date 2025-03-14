@@ -8,6 +8,7 @@ import gtfoBg from "../assets/gtfo_bg.jpg";
 import mimcatBg from "../assets/discord_bg.jpg";
 import omnifood from "../assets/omnifood.jpg";
 import tmdb_logo from "../assets/tmdb.jpg";
+import terminalBg from "../assets/terminal_bg.png";
 import { Box } from "@mui/material";
 import MUILink from "@mui/material/Link";
 import Navigation from "./Navigation";
@@ -35,6 +36,11 @@ const projects = [
     link: "https://mellifluous-belekoy-c5d336.netlify.app",
     image: tmdb_logo,
     title: "TMDB Movie App",
+  },
+  {
+    link: "https://mini.thefox-cmd.com",
+    image: terminalBg,
+    title: "Mini Portfolio",
   },
 ];
 
@@ -64,7 +70,7 @@ const Projects: React.FC = () => {
           lineHeight="24px"
           color="white"
           onMouseEnter={handleGlitchEffect}
-          >
+        >
           Projects
         </Typography>
         <hr
